@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chapter 6: Examples</title>
+    <meta name="author" content="Sophia Blitz">
+    <meta charset="utf-8">
+    <script>
+      /* Input: an integer
+       * Processing: determine if the integer is even or odd
+       * Output: a message that says the integer is even or odd
+       */
+      function isEven() {
+        // Get the user input from a text field and convert it to an integer.
+        let text = document.getElementById('inputBox1').value;
+        let value = parseInt(text);
+
+        // Choose message
+        let message;
+        if (value % 2 == 0) {
+          message = value + " is an even integer.";
+        }
+        else {
+          message = value + " is an odd integer.";
+        }
+
+        // Display message to the user.
+        document.getElementById('output1').innerHTML = message;
+      }
+
+      /* Input: an integer
+       * Processing: determine if the integer is even or odd
+       * Output: a message that says the integer is even or odd
+       */
+      function isOdd() {
+        // Get the user input from a text field and convert it to an integer.
+        let text = document.getElementById('inputBox2').value;
+        let value = parseInt(text);
+
+        // Choose message
+        let message;
+        if (value % 2 != 0) {
+          message = value + " is an odd integer.";
+        }
+        else {
+          message = value + " is an even integer.";
+        }
+
+        // Display message to the user.
+        document.getElementById('output2').innerHTML = message;
+      }
+
+      /* Input: three coefficients a, b, and c
+       * Processing: determine if real roots exist and compute the root(s) 
+            of the equation
+       * Output: message with the root(s) of the equation or "undefined" if none.
+       */
+      function quadratic() {
+        // Get the user input from 3 text fields.
+        let a = parseFloat(document.getElementById('inputBoxA').value);
+        let a = parseFloat(document.getElementById('inputBoxB').value);
+        let a = parseFloat(document.getElementById('inputBoxC').value);
+
+        // determine roots if they exist
+        let discr = b *b - 4 * a * c;
+        let root1, root2;
+        if(discr>=0)
+        {
+          let sq = Math.sqrt(discr);
+          root1 = ( -b + sq) / (2 * a);
+          root2 = ( -b - sq) / (2 * a);
+        }
+
+        // Display message to the user.
+        document.getElementById('output3').innerHTML = root1 + " " + root2;
+      }
+    </script>
+    
+  </head>
+  <body>
+    <h1>Chapter 6: Example - Even Integers</h1>
+    Enter an integer: <input type="number" id="inputBox1" > <br>
+    <button type="button" onclick="isEven();">Is Even?</button>
+    <div id="output1"> </div>
+
+    <h1>Chapter 6: Example - Odd Integers</h1>
+    Enter an integer: <input type="number" id="inputBox2" > <br>
+    <button type="button" onclick="isOdd();">Is Odd?</button>
+    <div id="output2"> </div>
+
+    <h1>Chapter 6: Example - Quadratic Formula</h1>
+    y= <input type="number" id="inputBoxA" size="3" >x<sup>2</sup> + <input type="number" id="inputBoxB" size="3" >x + <input type="number" id="inputBoxC" size="3" >
+    <button type="button" onclick="quadratic();">Compute Roots</button>
+    <div id="output3"> </div>
+  </body>
+</html>
