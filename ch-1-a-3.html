@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Chapter 1: Assignment 1</title>
+    <script>
+    function makeGreeting(){
+      let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("fname").value;
+      let result = document.getElementById("results").innerHtml = "Hello there " + fname + " " lname;
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Let's say hello</h1>
+    First Name:
+    <input type="text" id="fname">
+    <br>
+    Last Name:
+    <input type="text" id="lname">
+    <br>
+    <button type="button" onclick="makeGreeting();">Make Greeting</button>
+    <br>
+    <div id="results">
+    </div>
+  </body>
+</html>
