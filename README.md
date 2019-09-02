@@ -17,3 +17,6 @@ Review Questions: [https://sophiablitz.github.io/msd-cs301/ch-2-review](https://
 
 ## Chapter 5
 all. [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html)
+
+## Chapter 6
+Example: Even Integers [https://sophiablitz.github.io/msd-cs301/ch-6-ex-Even-Integers.html](https://sophiablitz.github.io/msd-cs301/ch-6-ex-Even-Integers.html)
