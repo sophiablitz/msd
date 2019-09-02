@@ -2,7 +2,7 @@
 Assignments and work from MSD program course CS 301.
 
 ## Chapter 2
-Review Questions: [https://sophiablitz.github.io/msd-cs301/ch-2-review.md](https://sophiablitz.github.io/msd-cs301/ch-2-review.md)
+Review Questions: [https://sophiablitz.github.io/msd-cs301/ch-2-review](https://sophiablitz.github.io/msd-cs301/ch-2-review)
 
 ## Chapter 3
 1. Life Story (h1, p): [https://sophiablitz.github.io/msd-cs301/ch-3-a-1.html](https://sophiablitz.github.io/msd-cs301/ch-3-a-1.html)
