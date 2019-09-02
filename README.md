@@ -16,7 +16,8 @@ Review Questions: [https://sophiablitz.github.io/msd-cs301/ch-2-review](https://
 4. Address (input, button, div): [https://sophiablitz.github.io/msd-cs301/ch-4-a-4.html](https://sophiablitz.github.io/msd-cs301/ch-4-a-4.html)
 
 ## Chapter 5
-all. [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html)
+All assignments [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html)
 
 ## Chapter 6
 Examples [https://sophiablitz.github.io/msd-cs301/ch-6-examples.html](https://sophiablitz.github.io/msd-cs301/ch-6-examples.html)
+All assignments [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html)
