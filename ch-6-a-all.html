@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chapter 6: All Assignments</title>
+    <meta name="author" content="Sophia Blitz">
+    <meta charset="utf-8">
+    <script>
+      // Assignment 1
+      /* Defining Table
+       * Input: 
+          - Two numbers
+       * Processing: 
+          - Get two numbers
+          - Calculate difference of two numbers
+          - Find absolute value of difference
+          - Display absolute value of difference
+       * Output:
+          - Absolute value of the difference of two numbers 
+       */
+      function calculateAbsoluteDifference() {
+        // get input
+        let a = parseFloat(document.getElementById('in1a').value);
+        let b = parseFloat(document.getElementById('in1b').value);
+  
+        // calculate absolute value of difference
+        let diff = Math.abs(a-b);
+
+        // display in div 'a1Div' with appended unit 'L' 
+        document.getElementById("output1").innerHTML = diff;  
+      }
+
+      // Assignment 2
+      /* Defining Table
+       * Input: 
+          - Weather condition
+       * Processing: 
+          - Get the weather condition
+          - Determine if weather matches known weather conditions
+          --- hot
+          --- rain
+          --- snow
+          --- other
+          - Display appropriate shoes for weather condition
+       * Output:
+          - Appropriate shoes for weather conditions
+       */
+      function determineShoes() {
+        // Get weather condition
+        let weather = document.getElementById("in2a").value;
+        
+        // Determine weather condition and corresponding shoes
+        let shoes;
+        switch (weather) {
+          case 'hot':
+            shoes = 'sandals';
+            break;
+          case 'rain':
+            shoes = 'galoshes';
+            break;
+          case 'snow':
+            shoes = 'boots';
+            break;
+          default:
+            shoes = 'shoes';
+            break;
+        }
+        
+        // Display shoes
+        document.getElementById("output2").innerHTML = shoes;
+      }
+
+
+      // Assignment 3
+      /* Defining Table
+       * Input: 
+          - Student's name
+          - Student's number of college credits
+       * Processing: 
+          - Get the student's name
+          - Get the student's number of college credits
+          - Determine if year in school by number of credits
+          --- 0-30 => freshman
+          --- 30-60 => sophmore
+          --- 60-90 => junior
+          --- 90+ => senior
+          - Display student's name and year
+       * Output:
+          - Student's name and year in school
+       */
+       function determineYearInSchool() {
+        // Get and credits in school
+        let name = document.getElementById("in3a").value;
+        let credits = document.getElementById("in3b").value;
+        
+        // Determine year in school
+        let year;
+        if (credits < 30) {
+          year="freshman";
+        }else if (credits < 60){
+          year="sophmore";
+        }else if (credits < 90){
+          year="junior";
+        }else {
+          year="senior";
+        }
+        
+        // Display name and year in school
+        document.getElementById("output3").innerHTML = name + " is a " + year;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Chapter 6 Assignments</h1>
+    <h2>Ch 6: Assignment 1 - Absolute Difference</h2>
+    Enter two numbers: <input type='number' size=4 id="in1a"><input type='number' size=4 id="in1b"> <button type="button" onclick="calculateAbsoluteDifference()">Calculate Absolute Difference</button>
+    <div id="output1"></div>
+
+    <h2>Ch 6: Assignment 2 - Shoes and Weather</h2>
+    Enter today's weather: <input type='text' id="in2a"> <button type="button" onclick="determineShoes();">What shoes?</button>
+    <div id="output2"></div>
+
+    <h2>Ch 6: Assignment 3 - Year in School</h2>
+    Student name: <input type='text' id="in3a"> <br>
+    Student credits: <input type='number' id="in3b"> <br>
+    <button type="button" onclick="determineYearInSchool();">What year?</button>
+    <div id="output3"></div>
+  </body>
+</html>
