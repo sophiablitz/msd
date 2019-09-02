@@ -57,14 +57,13 @@
       function quadratic() {
         // Get the user input from 3 text fields.
         let a = parseFloat(document.getElementById('inputBoxA').value);
-        let a = parseFloat(document.getElementById('inputBoxB').value);
-        let a = parseFloat(document.getElementById('inputBoxC').value);
+        let b = parseFloat(document.getElementById('inputBoxB').value);
+        let c = parseFloat(document.getElementById('inputBoxC').value);
 
         // determine roots if they exist
-        let discr = b *b - 4 * a * c;
+        let discr = b * b - 4 * a * c;
         let root1, root2;
-        if(discr>=0)
-        {
+        if(discr >= 0) {
           let sq = Math.sqrt(discr);
           root1 = ( -b + sq) / (2 * a);
           root2 = ( -b - sq) / (2 * a);
