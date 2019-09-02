@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chapter 5: All Assignments</title>
+    <meta name="author" content="Sophia Blitz">
+    <meta charset="utf-8">
+    <script>
+      // Assignment 1
+      /* Defining Table
+       * Input: 
+          - volume in quarts from input with id 'volumeQt'
+       * Processing: convert quarts to liters by multiplying by const 0.946353
+       * Output: volume in liters in div with id 'a1Div'
+       */
+      function convertQtToL() {
+        // constant 1 QT = 0.946353 L
+        const QT_TO_L = 0.946353;
+
+        // calculate L equivalent and reveal in div 'a1Div' with appended unit 'L' 
+        document.getElementById("a1Div").innerHTML = document.getElementById("volumeQt").value * QT_TO_L + " L";
+      }
+
+      // Assignment 2
+      /* Defining Table
+       * Input: 
+          - distance in kilometers from input with id 'distKm'
+       * Processing: convert quarts to liters by multiplying by const 0.946353
+       * Output: volume in liters in div with id 'a2Div'
+       */
+      function convertKmToM() {
+        // constant 1 Km = 0.621371 m
+        const KM_TO_M = 0.621371;
+
+        // calculate m equivalent and reveal in div 'a2Div' with appended unit 'm' 
+        document.getElementById("a2Div").innerHTML = document.getElementById("distKm").value * KM_TO_M + " m";
+      }
+      
+      // Assignment 3
+      /* Defining Table
+       * Input: 
+          - total boxes from input with id 'totalBoxes'
+          - boxes per stack from input with id 'boxesPerStack'
+       * Processing: divide total boxes by the number of boxes per stack 
+          and round up to nearest integer
+       * Output: number of stacks required in div with id 'a3Div'
+       */
+      function calculateStacks() {
+        // calculate number of stacks required by rounding up divident to nearest while number
+        let numStacks =  Math.ceil(document.getElementById("totalBoxes").value / document.getElementById("boxesPerStack").value);
+        
+        // reveal numStacks in div 'a3Div' with label
+        document.getElementById("a3Div").innerHTML = "Number of Stacks: " + numStacks;
+      }
+      
+      // Assignment 4
+      /* Defining Table
+       * Input: 
+          - total students from input with id 'numStudents'
+          - total teams from input with id 'numTeams'
+       * Processing: Calculate minimum number of students per team by dividing
+           numStudents/numTeams and round down. Determine how many team will have one 
+           additional student by finding the remainder of numStudents/numTeams.
+       * Output: description of team divisions in div with id 'a4Div'
+       */
+      function calculateTeams() {
+
+        // store input from user with ids 'numStudents' and 'numTeams'
+        let numStudents = Number(document.getElementById("numStudents").value);
+        let numTeams = Number(document.getElementById("numTeams").value);
+
+        // check for valid input - display error if not
+        if (numTeams>numStudents) {
+          document.getElementById("a4Div").innerHTML = "Cannot compute. Number of teams cannot exceed number of students.";
+          return;
+        }
+
+        // calculate minimum team size 
+        let minSize = Math.floor(numStudents/numTeams);
+
+        // calculate number of teams with an additional student
+        let teamsWithExtra = numStudents%numTeams;
+
+        // calculate number of teams with minimum number of students
+        let teamsWithMin = numTeams - teamsWithExtra;
+
+        // calculate size of teams with extra person
+        let extraSize = minSize + 1;
+        
+        // reveal team info in div 'a4Div'
+        if (teamsWithExtra === 0){
+          document.getElementById("a4Div").innerHTML = teamsWithMin + " teams with " + minSize + " members.";
+        }
+        else{
+          document.getElementById("a4Div").innerHTML = teamsWithExtra + " teams with " + extraSize + " members and " + teamsWithMin + " teams with " + minSize + " members.";
+        }
+      }
+      
+      // Assignment 5
+      /* Defining Table
+       * Input: 
+          - beginning odometer from input with id 'startOdo'
+          - ending odometer from input with id 'endOdo'
+          - gallons of gas used from input with id 'gallons'
+       * Processing: Calculate miles traveled by subtracting start from end ODO. 
+            Divide that result by gallons of gas used
+       * Output: mileage in miles per gallon revealed in div 'a5Div'
+       */
+       function calculateMileage() {
+        // calculate miles driven from both user inputs 'endOdo' and 'startOdo'
+        let milesDriven = Number(document.getElementById("endOdo").value) - Number(document.getElementById("startOdo").value);
+        // calculate mileage
+        let mileage = milesDriven/Number(document.getElementById("gallons").value);
+        // reveal in 'a5Div'
+        document.getElementById("a5Div").innerHTML = mileage + " mpg";
+      }
+      
+      // Assignment 6
+      /* Defining Table
+       * Input: age from input with id 'age'
+       * Processing: calculate range of heart rates for exercise by 
+            subtracting age from 220 and then multiply by 65% or 85% for 
+            min and max of range.
+       * Output: revealed in div 'a6Div'
+          - min heart rate during exercise
+          - max heart rate during exercise
+       */
+       function calculateHeartRate() {
+        // store input from user with id 'age'
+        let age = Number(document.getElementById("age").value);
+
+        // calculate min and max rate 
+        let minHeartRate = Math.ceil((220-age) * 0.65);
+        let maxHeartRate = Math.floor((220-age) * 0.85);
+
+        // reveal heart rate range in div 'a6Div'
+        document.getElementById("a6Div").innerHTML = "Min heart rate: " + minHeartRate + " bpm. <br>Max heart rate: " + maxHeartRate + " bpm.";
+      }
+      
+      // Assignment 7
+      /* Defining Table
+       * Input: 
+          - hours worked from input with id 'hoursWorked'
+          - hourly wage from input with id 'wage'
+       * Processing: Calculate after tax pay
+          - multiply hours worked by hourly wage to calculate earned wage
+          - multiply (1 - 0.15) or 0.85 by earned wage to calculate after tax pay
+       * Output: after tax pay revealed in div 'a7Div'
+       */
+       function calculateAfterTaxPay() {
+
+        // store input from user with ids 'hoursWorked' and 'wage'
+        let hoursWorked = Number(document.getElementById("hoursWorked").value);
+        let wage = Number(document.getElementById("wage").value);
+        // calculate after tax pay
+        let afterTaxPay = hoursWorked * wage * 0.85
+
+        // reveal after tax pay in div 'a7Div' with 2 digits past decimal
+        document.getElementById("a7Div").innerHTML = "$" + afterTaxPay.toFixed(2);
+      }
+      
+      // Assignment 8
+      /* Defining Table
+       * Input: 
+          - cable span or distance 'd' from input with id 'cableSpan'
+          - cable sag 's' from input with id 'cableSag'
+       * Processing: cacluate and display cable length with formula L = s + (8d^2)/(3*s)
+       * Output: required cable length of a cable spanning a distance 'd' and sagging length 's'
+       */
+       function caclulateCableLength() {
+        // store input from user with ids 'cableSpan' and 'cableSag'
+        let cableSpan = Number(document.getElementById("cableSpan").value);
+        let cableSag = Number(document.getElementById("cableSag").value);
+
+        // calculate cable length
+        let length = cableSpan + ( 8 * Math.pow(cableSag,2) ) / (3 * cableSpan);
+
+        // reveal cable length in div 'a8Div'
+        document.getElementById("a8Div").innerHTML = "Required cable length: " + length.toFixed(2);
+      }
+      
+      // Assignment 9
+      /* Defining Table
+       * Input: 
+          - Tire Width (mm) or 'w' from input with id 'tireWidth'
+          - Aspect Ratio or 'a' from input with id 'aspectRatio'
+          - Wheel Diameter (in) or 'd' from input with id 'wheelDiameter'
+       * Processing: cacluate and display tire volume with formula v = [Pi(w^2)a(wa + 2540d)]/10000000
+       * Output: tire volume (cm^3) to div with  id 'a9Div'
+       */
+       function caclulateTireVolume() {
+        // store input from user with ids 'cableSpan' and 'cableSag'
+        let w = Number(document.getElementById("tireWidth").value);
+        let a = Number(document.getElementById("aspectRatio").value);
+        let d = Number(document.getElementById("wheelDiameter").value);
+
+        // calculate tire volume
+        let volume = (Math.PI * Math.pow(w,2) * a * (w * a + 2540 * d))/10000000;
+
+        // reveal tire volume in div 'a9Div'
+        document.getElementById("a9Div").innerHTML = "Tire Volume (cm^3): " + volume.toFixed(2);
+      }
+      
+    </script>
+  </head>
+  <body>
+    <h1>Chapter 5 Assignments</h1>
+    <h2>Ch 5: Assignment 1 - Volume</h2>
+    Volume in Quarts: <input type="number" id="volumeQt">
+    <button type="button" onclick="convertQtToL();">Convert to Liters</button>
+    <div id="a1Div"> </div>
+
+    <h2>Ch 5: Assignment 2 - Distance</h2>
+    Distance in Kilometers: <input type="number" id="distKm">
+    <button type="button" onclick="convertKmToM();">Convert to Miles</button>
+    <div id="a2Div" > </div>
+
+    <h2>Ch 5: Assignment 3 - Grocery Store</h2>
+    Total boxes: <input type="number" id="totalBoxes"><br>
+    Boxes in each stack: <input type="number" id="boxesPerStack"><br>
+    <button type="button" onclick="calculateStacks();">Calculate Stacks</button>
+    <div id="a3Div" > </div>
+
+    <h2>Ch 5: Assignment 4 - Teacher's Teams</h2>
+    Number of Students: <input type="number" id="numStudents"><br>
+    Number of Teams: <input type="number" id="numTeams"><br>
+    <button type="button" onclick="calculateTeams();">Calculate Teams</button>
+    <div id="a4Div"> </div>
+
+    <h2>Ch 5: Assignment 5 - Mileage</h2>
+    Start Odometer: <input type="number" id="startOdo"><br>
+    End of Odometer: <input type="number" id="endOdo"><br>
+    Gallons of Gas: <input type="number" id="gallons"><br>
+    <button type="button" onclick="calculateMileage();">Calculate Mileage</button>
+    <div id="a5Div" > </div>
+
+    <h2>Ch 5: Assignment 6 - Heartrate</h2>
+    Age: <input type="number" id="age"><br>
+    <button type="button" onclick="calculateHeartRate();">Calculate Heart Rate</button>
+    <div id="a6Div" > </div>
+
+    <h2>Ch 5: Assignment 7 - After Tax Pay</h2>
+    Hours Worked: <input type="number" id="hoursWorked"><br>
+    Hourly Wage: <input type="number" id="wage"><br>
+    <button type="button" onclick="calculateAfterTaxPay();">Calculate After Tax Pay</button>
+    <div id="a7Div" > </div>
+
+    <h2>Ch 5: Assignment 8 - Cable Length</h2>
+    Cable Span: <input type="number" id="cableSpan"><br>
+    Cable Sag: <input type="number" id="cableSag"><br>
+    <button type="button" onclick="caclulateCableLength();">Calculate Cable Length</button>
+    <div id="a8Div" > </div>
+
+    <h2>Ch 5: Assignment 9 - Volume of a Tire</h2>
+    Tire Width (mm): <input type="number" id="tireWidth"><br>
+    Aspect Ratio: <input type="number" id="aspectRatio"><br>
+    Wheel Diameter (in): <input type="number" id="wheelDiameter"><br>
+    <button type="button" onclick="caclulateTireVolume();">Calculate Tire Volume</button>
+    <div id="a9Div" > </div>
+  </body>
+</html>
