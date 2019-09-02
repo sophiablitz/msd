@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chapter 4: Assignment 4</title>
+    <meta name="author" content="Sophia Blitz">
+    <meta charset="utf-8">
+    <script>
+      /* Defining Table
+       * Input: Get address components from user input in text fields
+       *    with ids 'name', 'street', 'city', 'state', and 'zip'
+       * Processing: Concatenate address components in en-us standard format
+            and display in div with id 'outputDiv'
+       * Output: en-us formatted address
+       */
+      function makeAddress() {
+        // Get the user's name from the text field that has the id
+        // of "name" and store it in a variable named name.
+        let name = document.getElementById('name').value;
+        
+        // Get the user's street from the text field that has the id
+        // of "street" and store it in a variable named street.
+        let street = document.getElementById('street').value;
+        
+        // Get the user's city from the text field that has the id
+        // of "city" and store it in a variable named city.
+        let city = document.getElementById('city').value;
+        
+        // Get the user's state from the text field that has the id
+        // of "state" and store it in a variable named state.
+        let state = document.getElementById('state').value;
+        
+        // Get the user's zip code from the text field that has the id
+        // of "zip" and store it in a variable named zip.
+        let zip = document.getElementById('zip').value;
+
+        // Use string concatenation to create an address
+        let address = name + "<br>" + street + "<br>" + city + ", " + state + " " + zip ;
+
+        // Display the scripture in the div that has the id "outputDiv".
+        document.getElementById('outputDiv').innerHTML = address;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Chapter 4: Assignment 4 - Make an Address</h1>
+    Name: <input type="text" id="name" > <br>
+    Street: <input type="text" id="street" > <br>
+    City: <input type="text" id="city" >
+    State: <input type="text" id="state" size="4"> 
+    Zip Code: <input type="number" id="zip" size="7"> <br>
+    <button type="button" onclick="makeAddress();">Make Address</button>
+    <div id="outputDiv" class> </div>
+  </body>
+</html>
