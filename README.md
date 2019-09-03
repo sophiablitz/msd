@@ -20,4 +20,5 @@ All assignments [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https:
 
 ## Chapter 6
 Examples: [https://sophiablitz.github.io/msd-cs301/ch-6-examples.html](https://sophiablitz.github.io/msd-cs301/ch-6-examples.html)
+
 All assignments: [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html)
