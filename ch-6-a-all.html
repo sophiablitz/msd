@@ -69,7 +69,6 @@
         document.getElementById("output2").innerHTML = shoes;
       }
 
-
       // Assignment 3
       /* Defining Table
        * Input: 
@@ -88,7 +87,7 @@
           - Student's name and year in school
        */
        function determineYearInSchool() {
-        // Get and credits in school
+        // Get name and credits in school
         let name = document.getElementById("in3a").value;
         let credits = document.getElementById("in3b").value;
         
@@ -107,22 +106,76 @@
         // Display name and year in school
         document.getElementById("output3").innerHTML = name + " is a " + year;
       }
+      // Assignment 4
+      /* Defining Table
+       * Input: 
+          - Cost of house
+       * Processing: 
+          - Get the cost of the house
+          - Determine payment formula
+          --- 0-$49,999.99 => 5% * cost
+          --- $50,000-$99,999.99 => $2,000 + 10% * (cost - $50,000)
+          --- $100,000 - $199,999.99 => $7,500 + 20% * (cost - $100,000)
+          --- $200,000+ => $27,500 + 25% * (cost - $200,000)
+          - Calculate down payment
+          - Display down payment
+       * Output:
+          - Down payment required for provided house price
+       */
+       function calculateDownPayment() {
+        // Get cost of house
+        let cost = parseFloat(document.getElementById("in4a").value);
+        
+        // Determine and use formula to calculate down payment
+        let downPayment;
+        if (cost < 49999.99) {
+          downPayment = 0.05 * cost;
+        }else if (cost < 99999.99){
+          downPayment = 2000 + 0.1 * (cost - 50000);
+        }else if (cost < 199999.99){
+          downPayment = 7500 + 0.2 * (cost - 100000);
+        }else {
+          downPayment = 27500 + 0.25 * (cost - 200000);
+        }
+        
+        // Display down payment
+        document.getElementById("output4").innerHTML = "Down payment: $" + downPayment.toFixed(2);
+      }
+      
     </script>
   </head>
   <body>
-    <h1>Chapter 6 Assignments</h1>
-    <h2>Ch 6: Assignment 1 - Absolute Difference</h2>
-    Enter two numbers: <input type='number' size=4 id="in1a"><input type='number' size=4 id="in1b"> <button type="button" onclick="calculateAbsoluteDifference()">Calculate Absolute Difference</button>
-    <div id="output1"></div>
+    <!-- Ch 6 Assignment 1 -->
+    <div>
+      <h1>Chapter 6 Assignments</h1>
+      <h2>Ch 6: Assignment 1 - Absolute Difference</h2>
+      Enter two numbers: <input type='number' size=4 id="in1a"><input type='number' size=4 id="in1b"> <button type="button" onclick="calculateAbsoluteDifference()">Calculate Absolute Difference</button>
+      <div id="output1"></div>
+    </div>
 
-    <h2>Ch 6: Assignment 2 - Shoes and Weather</h2>
-    Enter today's weather: <input type='text' id="in2a"> <button type="button" onclick="determineShoes();">What shoes?</button>
-    <div id="output2"></div>
+    <!-- Ch 6 Assignment 2-->
+    <div>
+      <h2>Ch 6: Assignment 2 - Shoes and Weather</h2>
+      Enter today's weather: <input type='text' id="in2a"> <button type="button" onclick="determineShoes();">What shoes?</button>
+      <div id="output2"></div>
+    </div>
 
-    <h2>Ch 6: Assignment 3 - Year in School</h2>
-    Student name: <input type='text' id="in3a"> <br>
-    Student credits: <input type='number' id="in3b"> <br>
-    <button type="button" onclick="determineYearInSchool();">What year?</button>
-    <div id="output3"></div>
+    <!-- Ch 6 Assignment 3 -->
+    <div>
+      <h2>Ch 6: Assignment 3 - Year in School</h2>
+      Student name: <input type='text' id="in3a"> <br>
+      Student credits: <input type='number' id="in3b"> <br> 
+      <button type="button" onclick="determineYearInSchool();">What year?</button>
+      <div id="output3"></div>
+    </div>
+
+    <!-- Ch 6 Assignment 4 -->
+    <div>
+      <h2>Ch 6: Assignment 4 - Down Payments</h2>
+      Cost of house: <input type='number' id="in4a">
+      <button type="button" onclick="calculateDownPayment();">Down Payment</button>
+      <div id="output4"></div>
+    </div>
+
   </body>
 </html>
