@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 8: All Assignments</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    // Assignment 1
+    /* Defining Table
+     * Input: 
+        - n - number of times to print 'sunshine'
+     * Processing:
+        - Get n from user
+        - Create message with 'sunshine' n times
+        - Display message in div
+     * Output:
+        - 'sunshine' appearing n times
+     */
+    function sunshine() {
+      // Get n
+      let n = parseInt(document.getElementById("in1a").value);
+
+      // display error for invalid input
+      if (n < 0) {
+        document.getElementById("output1").innerHTML = "ERROR - n must be greater than or equal to 0.";
+        return;
+      }
+
+      // Create message
+      let message = "";
+      for (let i = 0; i < n; i++) {
+        message += "sunshine ";
+      }
+
+      // Display sunshine message
+      document.getElementById("output1").innerHTML = message;
+    }
+
+    // Assignment 2
+    /* Defining Table
+     * Input: 
+        - phrase from the user
+        - n - number of times to print user's phrase
+     * Processing:
+        - Get n and phrase from user
+        - Create message with phrase n times
+        - Display message in div
+     * Output:
+        - phrase appearing n times
+     */
+    function sayItAgain() {
+      // Get n and phrase
+      let phrase = document.getElementById("in2a").value;
+      let n = parseInt(document.getElementById("in2b").value);
+
+      // display error for invalid input
+      if (n < 0) {
+        document.getElementById("output2").innerHTML = "ERROR - n must be greater than or equal to 0.";
+        return;
+      }
+
+      // Create message
+      let message = "";
+      for (let i = 0; i < n; i++) {
+        message += phrase + " ";
+      }
+
+      // Display message
+      document.getElementById("output2").innerHTML = message;
+    }
+
+    // Assignment 3
+    /* Defining Table
+     * Input: 
+        - n - number to count to from 1
+     * Processing:
+        - Get n from user
+        - Create message with all integers from 1 to n 
+        - Display message in div
+     * Output:
+        - all integers from 1 to n
+     */
+    function countToN() {
+      // Get n
+      let n = parseInt(document.getElementById("in3a").value);
+
+
+      // Create message
+      let message = "";
+
+      // if negative or zero, count down
+      if (n < 1) {
+        for (let i = 1; i >= n; i--) {
+          message += i + " ";
+        }
+      }
+      // if positive, count up
+      else {
+        for (let i = 1; i <= n; i++) {
+          message += i + " ";
+        }
+      }
+
+      // Display message
+      document.getElementById("output3").innerHTML = message;
+    }
+
+    // Assignment 4
+    /* Defining Table
+     * Input: 
+        - n - number to add all odd integers between 1 and n
+     * Processing:
+        - Get n from user
+        - Calculate sum of odd integers between 1 and n
+        --- loop over all odd numbers between 1 and n inclusive
+        ----- add number to sum
+        - Display sum in div
+     * Output:
+        - Sum of odd integers between 1 and n
+     */
+    function addTheOdds() {
+      // Get n
+      let n = parseInt(document.getElementById("in4a").value);
+
+
+      // Create sum
+      let sum = 0;
+
+      // if n is negative or zero, count down and add
+      if (n < 1) {
+        for (let i = 1; i >= n; i = i - 2) {
+          sum += i;
+        }
+      }
+      // if n is positive, count up and add
+      else {
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+      }
+
+      // Display sum
+      document.getElementById("output4").innerHTML = sum;
+    }
+
+    // Assignment 5
+    /* Defining Table
+     * Input: 
+        - n - number to create times table for
+     * Processing:
+        - Get n from user
+        - Create times table
+        --- loop over integers from 1 to 12
+        ----- create line of table
+        ----- add line of table to message
+        - Display times table message
+     * Output:
+        - Times table of all products of 1 through 12 with n.
+     */
+    function createTimesTable() {
+      // Get n
+      let n = parseInt(document.getElementById("in5a").value);
+
+      // Create times table
+      let message = "";
+      for (let i = 1; i <= 12; i++) {
+        message += n + "x" + i + "=" + (n * i) + "<br>";
+      }
+
+      // Display message
+      document.getElementById("output5").innerHTML = message;
+    }
+
+    // Assignment 6
+    /* Defining Table
+     * Input: 
+        - n - base of exponent for powers table from 0 to 31
+     * Processing:
+        - Get n from user
+        - Create power table
+        --- loop from 0 to 31 inclusive
+        ----- calculate next power
+        ----- add power to message
+        - Display powers message
+     * Output:
+        - comma separated list of all powers of n from 0 to 31
+     */
+    function createPowers() {
+      // Get n
+      let n = parseInt(document.getElementById("in6a").value);
+
+      // Create times table
+      let message = "";
+      for (let i = 0; i <= 31; i++) {
+        message += Math.pow(n, i) + ", ";
+      }
+      // trim off space and extra comma at end of message.
+      message = message.slice(0, message.length - 2);
+
+      // Display message
+      document.getElementById("output6").innerHTML = message;
+    }
+
+    // Assignment 7
+    /* Defining Table
+     * Input: 
+        - n - number of numbers of fibonacci to display
+     * Processing:
+        - Get n from user
+        - Create fibonacci sequence
+        --- loop n times
+        ----- calculate next number in sequence
+        ----- add number to message
+        - Display fibonacci numbers
+     * Output:
+        - comma separated list of Fibonacci numbers
+     */
+    function writeFib() {
+      // Get n
+      let n = parseInt(document.getElementById("in7a").value);
+
+      // error handling -- can't accept numbers less than or equal to zero
+      if (n <= 0) {
+        document.getElementById("output7").innerHTML = "Error: number must be greater than 0.";
+        return;
+      }
+      // edge case handling
+      if (n === 1) {
+        document.getElementById("output7").innerHTML = "0";
+        return;
+      }
+
+      // Create fibonacci sequence
+      let fibonacci = [0, 1];
+
+      for (let i = 2; i < n; i++) {
+        fibonacci.push(fibonacci[i - 2] + fibonacci[i - 1]);
+      }
+
+      // Display sequence
+      document.getElementById("output7").innerHTML = fibonacci;
+    }
+
+    // Assignment 8
+    function numberGuessGame() {
+      let message = "i'm thinking of a number between 1 and 100. \n" +
+        "Try to guess it!\n" +
+        "Please enter an integer between 1 and 100.";
+      let answer = parseInt(Math.ceil(Math.random() * 100));
+      console.log("Random number is: " + answer);
+      let guess;
+      let guessCounter = 0;
+      do {
+        guess = parseInt(prompt(message));
+        guessCounter++;
+        if (guess < answer) {
+          message = guess + " is too low. Please enter another integer.";
+        }
+        else if (guess > answer) {
+          message = guess + " is too high. Please enter another integer.";
+        }
+      } while (guess != answer);
+      message = guess + " is correct! You used " + guessCounter + " guess(es).";
+      alert(message);
+    }
+
+    // Assignment 9
+    /* Defining Table
+     * Input: 
+        - n - number of rows in table of expressions about n
+     * Processing:
+        - Get n from user
+        - Create table
+        --- create header row
+        --- loop n times
+        ----- calulate row of expressions
+        ----- add row to table
+        - Display table of expressions
+     * Output:
+        - table of expressions of n with exactly n rows. 
+        Each row will show n, 2*n, 3*n, n*n, and n*n*n
+     */
+    function createTableOfN() {
+      // Get n
+      let n = parseInt(document.getElementById("in9a").value);
+
+      if (n < 1) {
+        document.getElementById("output9").innerHTML = "ERROR: Enter a positive integer.";
+        return;
+      }
+      // Create table and header
+      let message = "<table style='border:1px solid black;'><tr><th>n</th><th>2*n</th><th>3*n</th><th>n*n</th><th>n*n*n</th></tr>";
+
+      for (let i = 1; i <= n; i++) {
+        // calulate row of expressions
+        message += "<tr><td style='width:50px'>" +
+          i + "</td><td style='width:50px'>" +
+          i * 2 + "</td><td style='width:50px'>" +
+          3 * i + "</td><td style='width:50px'>" +
+          i * i + "</td><td style='width:50px'>" +
+          i * i * i + "</td></tr>";
+      }
+
+      // Finish table in message
+      message += "</table>";
+
+      // Display table
+      document.getElementById("output9").innerHTML = message;
+    }
+
+    // Assignment 10
+    /* Defining Table
+     * Input: 
+        - n - number to create times table of n by n facts
+     * Processing:
+        - Get n from user
+        - Create times table
+        --- loop over integers i from 1 to n
+        ----- loop over integers j from 1 to n
+        ------- next cell in table mulitpling i by j
+        ----- add line of table to message
+        - Display times table message
+     * Output:
+        - Times table of all products of 1 through n with n.
+     */
+    function createNbyNTimesTable() {
+      // Get n
+      let n = parseInt(document.getElementById("in10a").value);
+      // Error handling
+      if (n < 1) {
+        document.getElementById("output10").innerHTML = "ERROR: Enter an integer a positive integer";
+        return;
+      }
+      // Create times table
+      let message = "<table>";
+      for (let i = 1; i <= n; i++) {
+        message += "<tr>"; // start row 
+        for (let j = 1; j <= n; j++) {
+          message += "<td>" + i * j + "</td>";
+        }
+        message += "</tr>"; // end row
+      }
+      // end message with closing table tag
+      message += "</table>";
+
+      // Display message
+      document.getElementById("output10").innerHTML = message;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 8: All Assignments</h1>
+  <h2>Ch 8: Assignment 1 - Sunshine</h2>
+  Enter a number to see 'sunshine' repeated n times. <br>
+  n: <input type='number' id="in1a">
+  <button type="button" onclick="sunshine();">Shine</button><br>
+  <div id="output1"></div>
+
+  <h2>Ch 8: Assignment 2 - Say it again!</h2>
+  Enter a phrase and number to see the phrase repeated n times. <br>
+  phrase: <input type='text' id="in2a">
+  n: <input type='number' id="in2b">
+  <button type="button" onclick="sayItAgain();">Say it again!</button><br>
+  <div id="output2"></div>
+
+  <h2>Ch 8: Assignment 3 - Counting from 1 to n</h2>
+  Enter a number to count from 1 to n. <br>
+  n: <input type='number' id="in3a">
+  <button type="button" onclick="countToN();">Count</button>(I work with negative numbers)<br>
+  <div id="output3"></div>
+
+  <h2>Ch 8: Assignment 4 - Add the Odds up to N</h2>
+  Enter a number to find the sum of odd numbers from 1 to n. <br>
+  n: <input type='number' id="in4a">
+  <button type="button" onclick="addTheOdds();">Add</button>(I work with negative numbers)<br>
+  <div id="output4"></div>
+
+  <h2>Ch 8: Assignment 5 - 5 Times Table</h2>
+  Enter a number to create a times table. <br>
+  n: <input type='number' id="in5a" value="5">
+  <button type="button" onclick="createTimesTable();">Create Table</button>(I work with negative numbers)<br>
+  <div id="output5"></div>
+
+  <h2>Ch 8: Assignment 6 - Powers of 2</h2>
+  Enter a number see the powers of 2 from 0 to 31. <br>
+  n: <input type='number' id="in6a" value="2">
+  <button type="button" onclick="createPowers();">Create Powers</button>(I work with negative numbers)<br>
+  <div id="output6"></div>
+
+  <h2>Ch 8: Assignment 7 - Fibonacci</h2>
+  Enter a number see the first n nubmers of the Fibonacci sequence. <br>
+  n: <input type='number' id="in7a" value="25">
+  <button type="button" onclick="writeFib();">See Fibonacci</button><br>
+  <div id="output7"></div>
+
+  <h2>Ch 8: Assignment 8 - Guessing Game</h2>
+  Press start to begin game. <button type="button" onclick="numberGuessGame();">Start</button><br>
+
+  <h2>Ch 8: Assignment 9 - Table of n</h2>
+  Enter a number see a table of n expressions. <br>
+  n: <input type='number' id="in9a" value="3">
+  <button type="button" onclick="createTableOfN();">Make Table</button><br>
+  <div id="output9"></div>
+
+  <h2>Ch 8: Assignment 10 - Multiplication Table</h2>
+  Enter a number see a table of n by n multiplication facts. <br>
+  n: <input type='number' id="in10a" value="12">
+  <button type="button" onclick="createNbyNTimesTable();">Make Table</button><br>
+  <div id="output10"></div>
+
+</body>
+
+</html>

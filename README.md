@@ -20,8 +20,10 @@ All assignments [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https:
 
 ## Chapter 6
 Examples: [https://sophiablitz.github.io/msd-cs301/ch-6-examples.html](https://sophiablitz.github.io/msd-cs301/ch-6-examples.html)
-
 All assignments (1 - 6): [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html)
 
 ## Chapter 7
 All assignments (2 and 5): [https://sophiablitz.github.io/msd-cs301/ch-7-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-7-a-all.html)
+
+## Chapter 8
+All assignments (1 and 10): [https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html)
