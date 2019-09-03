@@ -1,181 +1,334 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Chapter 6: All Assignments</title>
-    <meta name="author" content="Sophia Blitz">
-    <meta charset="utf-8">
-    <script>
-      // Assignment 1
-      /* Defining Table
-       * Input: 
-          - Two numbers
-       * Processing: 
-          - Get two numbers
-          - Calculate difference of two numbers
-          - Find absolute value of difference
-          - Display absolute value of difference
-       * Output:
-          - Absolute value of the difference of two numbers 
-       */
-      function calculateAbsoluteDifference() {
-        // get input
-        let a = parseFloat(document.getElementById('in1a').value);
-        let b = parseFloat(document.getElementById('in1b').value);
-  
-        // calculate absolute value of difference
-        let diff = Math.abs(a-b);
 
-        // display in div 'a1Div' with appended unit 'L' 
-        document.getElementById("output1").innerHTML = diff;  
+<head>
+  <title>Chapter 6: All Assignments</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    // Assignment 1
+    /* Defining Table
+     * Input: 
+        - Two numbers
+     * Processing: 
+        - Get two numbers
+        - Calculate difference of two numbers
+        - Find absolute value of difference
+        - Display absolute value of difference
+     * Output:
+        - Absolute value of the difference of two numbers 
+     */
+    function calculateAbsoluteDifference() {
+      // get input
+      let a = parseFloat(document.getElementById('in1a').value);
+      let b = parseFloat(document.getElementById('in1b').value);
+
+      // calculate absolute value of difference
+      let diff = Math.abs(a - b);
+
+      // display in div 'a1Div' with appended unit 'L' 
+      document.getElementById("output1").innerHTML = diff;
+    }
+
+    // Assignment 2
+    /* Defining Table
+     * Input: 
+        - Weather condition
+     * Processing: 
+        - Get the weather condition
+        - Determine if weather matches known weather conditions
+        --- hot
+        --- rain
+        --- snow
+        --- other
+        - Display appropriate shoes for weather condition
+     * Output:
+        - Appropriate shoes for weather conditions
+     */
+    function determineShoes() {
+      // Get weather condition
+      let weather = document.getElementById("in2a").value;
+
+      // Determine weather condition and corresponding shoes
+      let shoes;
+      switch (weather) {
+        case 'hot':
+          shoes = 'sandals';
+          break;
+        case 'rain':
+          shoes = 'galoshes';
+          break;
+        case 'snow':
+          shoes = 'boots';
+          break;
+        default:
+          shoes = 'shoes';
+          break;
       }
 
-      // Assignment 2
-      /* Defining Table
-       * Input: 
-          - Weather condition
-       * Processing: 
-          - Get the weather condition
-          - Determine if weather matches known weather conditions
-          --- hot
-          --- rain
-          --- snow
-          --- other
-          - Display appropriate shoes for weather condition
-       * Output:
-          - Appropriate shoes for weather conditions
-       */
-      function determineShoes() {
-        // Get weather condition
-        let weather = document.getElementById("in2a").value;
-        
-        // Determine weather condition and corresponding shoes
-        let shoes;
-        switch (weather) {
-          case 'hot':
-            shoes = 'sandals';
-            break;
-          case 'rain':
-            shoes = 'galoshes';
-            break;
-          case 'snow':
-            shoes = 'boots';
-            break;
-          default:
-            shoes = 'shoes';
-            break;
-        }
-        
-        // Display shoes
-        document.getElementById("output2").innerHTML = shoes;
+      // Display shoes
+      document.getElementById("output2").innerHTML = shoes;
+    }
+
+    // Assignment 3
+    /* Defining Table
+     * Input: 
+        - Student's name
+        - Student's number of college credits
+     * Processing: 
+        - Get the student's name
+        - Get the student's number of college credits
+        - Determine if year in school by number of credits
+        --- 0-30 => freshman
+        --- 30-60 => sophmore
+        --- 60-90 => junior
+        --- 90+ => senior
+        - Display student's name and year
+     * Output:
+        - Student's name and year in school
+     */
+    function determineYearInSchool() {
+      // Get name and credits in school
+      let name = document.getElementById("in3a").value;
+      let credits = document.getElementById("in3b").value;
+
+      // Determine year in school
+      let year;
+      if (credits < 30) {
+        year = "freshman";
+      } else if (credits < 60) {
+        year = "sophmore";
+      } else if (credits < 90) {
+        year = "junior";
+      } else {
+        year = "senior";
       }
 
-      // Assignment 3
-      /* Defining Table
-       * Input: 
-          - Student's name
-          - Student's number of college credits
-       * Processing: 
-          - Get the student's name
-          - Get the student's number of college credits
-          - Determine if year in school by number of credits
-          --- 0-30 => freshman
-          --- 30-60 => sophmore
-          --- 60-90 => junior
-          --- 90+ => senior
-          - Display student's name and year
-       * Output:
-          - Student's name and year in school
-       */
-       function determineYearInSchool() {
-        // Get name and credits in school
-        let name = document.getElementById("in3a").value;
-        let credits = document.getElementById("in3b").value;
-        
-        // Determine year in school
-        let year;
-        if (credits < 30) {
-          year="freshman";
-        }else if (credits < 60){
-          year="sophmore";
-        }else if (credits < 90){
-          year="junior";
-        }else {
-          year="senior";
-        }
-        
-        // Display name and year in school
-        document.getElementById("output3").innerHTML = name + " is a " + year;
+      // Display name and year in school
+      document.getElementById("output3").innerHTML = name + " is a " + year;
+    }
+
+    // Assignment 4
+    /* Defining Table
+     * Input: 
+        - Cost of house
+     * Processing: 
+        - Get the cost of the house
+        - Determine payment formula
+        --- 0-$49,999.99 => 5% * cost
+        --- $50,000-$99,999.99 => $2,000 + 10% * (cost - $50,000)
+        --- $100,000 - $199,999.99 => $7,500 + 20% * (cost - $100,000)
+        --- $200,000+ => $27,500 + 25% * (cost - $200,000)
+        - Calculate down payment
+        - Display down payment
+     * Output:
+        - Down payment required for provided house price
+     */
+    function calculateDownPayment() {
+      // Get cost of house
+      let cost = parseFloat(document.getElementById("in4a").value);
+
+      // Determine and use formula to calculate down payment
+      let downPayment;
+      if (cost < 49999.99) {
+        downPayment = 0.05 * cost;
+      } else if (cost < 99999.99) {
+        downPayment = 2000 + 0.1 * (cost - 50000);
+      } else if (cost < 199999.99) {
+        downPayment = 7500 + 0.2 * (cost - 100000);
+      } else {
+        downPayment = 27500 + 0.25 * (cost - 200000);
       }
-      // Assignment 4
-      /* Defining Table
-       * Input: 
-          - Cost of house
-       * Processing: 
-          - Get the cost of the house
-          - Determine payment formula
-          --- 0-$49,999.99 => 5% * cost
-          --- $50,000-$99,999.99 => $2,000 + 10% * (cost - $50,000)
-          --- $100,000 - $199,999.99 => $7,500 + 20% * (cost - $100,000)
-          --- $200,000+ => $27,500 + 25% * (cost - $200,000)
-          - Calculate down payment
-          - Display down payment
-       * Output:
-          - Down payment required for provided house price
-       */
-       function calculateDownPayment() {
-        // Get cost of house
-        let cost = parseFloat(document.getElementById("in4a").value);
-        
-        // Determine and use formula to calculate down payment
-        let downPayment;
-        if (cost < 49999.99) {
-          downPayment = 0.05 * cost;
-        }else if (cost < 99999.99){
-          downPayment = 2000 + 0.1 * (cost - 50000);
-        }else if (cost < 199999.99){
-          downPayment = 7500 + 0.2 * (cost - 100000);
-        }else {
-          downPayment = 27500 + 0.25 * (cost - 200000);
-        }
-        
-        // Display down payment
-        document.getElementById("output4").innerHTML = "Down payment: $" + downPayment.toFixed(2);
+
+      // Display down payment
+      document.getElementById("output4").innerHTML = "Down payment: $" + downPayment.toFixed(2);
+    }
+
+    // Assignment 5
+    /* Defining Table
+     * Input: 
+        - Patron status (student, faculty, or other)
+        - Number of overdue books (none (0), few (1-2), many (3+))
+     * Processing: 
+        - Get the patron status
+        - Get the number of overdue books
+        - Determine loan duration 
+        --- student & none => 6
+        --- student & few => 4
+        --- student & many => 2
+        --- faculty & none => 16
+        --- faculty & few => 12
+        --- faculty & many => 8
+        --- other & none => 4
+        --- other & few => 3
+        --- other & many => 2
+        - Display down payment
+     * Output:
+        - Down payment required for provided house price
+     */
+    function calculateLoanDuration() {
+      // Get patron status and books overdue
+      let status = document.getElementById("in5a").value;
+      let numBooks = document.getElementById("in5b").value;
+
+      // Determine duration of loan
+      let duration;
+      let reductionFactor;
+      // Set inital loan duration based on status and determine factor of reduction for additional overdue books
+      switch (status) {
+        case 'student': 
+          duration = 6;
+          reductionFactor = 2;
+          break;
+        case 'faculty': 
+          duration = 16;
+          reductionFactor = 4;
+          break;
+        case 'other': 
+          duration = 4;
+          reductionFactor = 1;
+          break;
+      }
+      // reduce duration based on number of books over due
+      switch (numBooks) {
+        case 'none': 
+          break;
+        case 'few': 
+          duration = duration - reductionFactor;
+          break;
+        case 'many': 
+          duration = duration - reductionFactor*2
+          break;
+      }
+
+      // Display loan duration
+      document.getElementById("output5").innerHTML = "Loan duration (weeks): " + duration;
+    }
+
+    // Assignment 6
+    /* Defining Table
+     * Input: 
+        - two numbers for a math problem
+        - operation for a math problem
+        - answer to a math problem
+     * Processing: 
+        - Get the two numbers, the operation, and the answer
+        - Determine correct operation to use
+        - Calculate correct answer
+        - Determine if user's answer matches correct answer
+        - Display message 
+     * Output:
+        - Message with feedback
+     */
+    function checkProblem() {
+      // Get the two numbers, the operation, and the answer
+      let num1 = parseFloat(document.getElementById("in6a").value);
+      let operation = document.getElementById("in6b").value;
+      let num2 = parseFloat(document.getElementById("in6c").value);
+      let answer = parseFloat(document.getElementById("in6d").value);
+
+      // Determine correct answer
+      let correctAnswer;
+      switch (operation) {
+        case '+': 
+          correctAnswer = num1 + num2;
+          break;
+        case '-': 
+          correctAnswer = num1 - num2;
+          break;
+        case '*': 
+          correctAnswer = num1 * num2;
+          break;
+        case '/': 
+          correctAnswer = num1 / num2;
+          break;
       }
       
-    </script>
-  </head>
-  <body>
-    <!-- Ch 6 Assignment 1 -->
-    <div>
-      <h1>Chapter 6 Assignments</h1>
-      <h2>Ch 6: Assignment 1 - Absolute Difference</h2>
-      Enter two numbers: <input type='number' size=4 id="in1a"><input type='number' size=4 id="in1b"> <button type="button" onclick="calculateAbsoluteDifference()">Calculate Absolute Difference</button>
-      <div id="output1"></div>
-    </div>
+      // Determine feedback
+      let feedback;
+      if (correctAnswer === answer){
+        feedback = "Correct! Great Job!"
+      } else {
+        feedback = "Incorrect! Try again!"
+      }
+      // Display feedback
+      document.getElementById("output6").innerHTML =  feedback;
+    }
+  </script>
+</head>
 
-    <!-- Ch 6 Assignment 2-->
-    <div>
-      <h2>Ch 6: Assignment 2 - Shoes and Weather</h2>
-      Enter today's weather: <input type='text' id="in2a"> <button type="button" onclick="determineShoes();">What shoes?</button>
-      <div id="output2"></div>
-    </div>
+<body>
+  <!-- Ch 6 Assignment 1 -->
+  <div>
+    <h1>Chapter 6 Assignments</h1>
+    <h2>Ch 6: Assignment 1 - Absolute Difference</h2>
+    Enter two numbers: <input type='number' size=4 id="in1a"><input type='number' size=4 id="in1b"> <button
+      type="button" onclick="calculateAbsoluteDifference()">Calculate Absolute Difference</button>
+    <div id="output1"></div>
+  </div>
 
-    <!-- Ch 6 Assignment 3 -->
-    <div>
-      <h2>Ch 6: Assignment 3 - Year in School</h2>
-      Student name: <input type='text' id="in3a"> <br>
-      Student credits: <input type='number' id="in3b"> <br> 
-      <button type="button" onclick="determineYearInSchool();">What year?</button>
-      <div id="output3"></div>
-    </div>
+  <!-- Ch 6 Assignment 2-->
+  <div>
+    <h2>Ch 6: Assignment 2 - Shoes and Weather</h2>
+    Enter today's weather: <input type='text' id="in2a"> <button type="button" onclick="determineShoes();">What
+      shoes?</button>
+    <div id="output2"></div>
+  </div>
 
-    <!-- Ch 6 Assignment 4 -->
-    <div>
-      <h2>Ch 6: Assignment 4 - Down Payments</h2>
-      Cost of house: <input type='number' id="in4a">
-      <button type="button" onclick="calculateDownPayment();">Down Payment</button>
-      <div id="output4"></div>
-    </div>
+  <!-- Ch 6 Assignment 3 -->
+  <div>
+    <h2>Ch 6: Assignment 3 - Year in School</h2>
+    Student name: <input type='text' id="in3a"> <br>
+    Student credits: <input type='number' id="in3b"> <br>
+    <button type="button" onclick="determineYearInSchool();">What year?</button>
+    <div id="output3"></div>
+  </div>
 
-  </body>
+  <!-- Ch 6 Assignment 4 -->
+  <div>
+    <h2>Ch 6: Assignment 4 - Down Payments</h2>
+    Cost of house: <input type='number' id="in4a">
+    <button type="button" onclick="calculateDownPayment();">Down Payment</button>
+    <div id="output4"></div>
+  </div>
+
+  <!-- Ch 6 Assignment 5 -->
+  <div>
+    <h2>Ch 6: Assignment 5 - Borrow a Book</h2>
+    Patron Status:
+    <select id="in5a">
+      <option value="student">student</option>
+      <option value="faculty">faculty</option>
+      <option value="other">other</option>
+    </select> <br>
+    Number of overdue books:
+    <select id="in5b">
+      <option value="none">0 (zero)</option>
+      <option value="few">fewer than 3</option>
+      <option value="many">3 or more</option>
+    </select> <br>
+    <button type="button" onclick="calculateLoanDuration();">Loan Duration</button>
+    <div id="output5"></div>
+  </div>
+
+  <!-- Ch 6 Assignment 6 -->
+  <div>
+    <h2>Ch 6: Assignment 6 - Correcting Math Problems</h2>
+    Enter your math problem: 
+    <input type='number' id="in6a">
+    <select id="in6b">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select> 
+    <input type='number' id="in6c"> = 
+    <input type='number' id="in6d">
+    <br>
+    <button type="button" onclick="checkProblem();">Check</button>
+    <div id="output6"></div>
+  </div>
+
+</body>
+
 </html>

@@ -19,5 +19,5 @@ Review Questions: [https://sophiablitz.github.io/msd-cs301/ch-2-review](https://
 All assignments [https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-5-a-all.html)
 
 ## Chapter 6
-Examples [https://sophiablitz.github.io/msd-cs301/ch-6-examples.html](https://sophiablitz.github.io/msd-cs301/ch-6-examples.html)
-All assignments [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html)
+Examples: [https://sophiablitz.github.io/msd-cs301/ch-6-examples.html](https://sophiablitz.github.io/msd-cs301/ch-6-examples.html)
+All assignments: [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-6-a-all.html)
