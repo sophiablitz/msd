@@ -10,7 +10,8 @@
     /* Defining Table
      * Input: 
         - subtotal of transaction
-     * Processing: 
+     * Processing:
+        - Get subtotal 
         - Determine if 10% savings applies
         --- Determine if subtotal is over $50
         --- Get current day of the week
@@ -41,6 +42,43 @@
       // Display total amount due 
       document.getElementById("output2").innerHTML = "Total due: $" + total.toFixed(2);
     }
+
+    // Assignment 5
+    /* Defining Table
+     * Input: 
+        - child age
+        - season of the year (spring, summer, fall, or winter)
+     * Processing: 
+        - Get age and season
+        - Determine bedtime for age and season
+        - Display bedtime
+     * Output:
+        - Bedtime
+     */
+    function calculateBedtime() {
+      // Get age and season
+      let age = parseInt(document.getElementById("in5a").value);
+      let season = document.getElementById("in5b").value;
+
+      // Determine bedtime
+      let bedtime;
+      if (age <= 5 && (season === "summer" || season === "fall")) {
+        bedtime = "8:30 pm for children age " + age + " during summer or fall";
+      } else if (age <= 5) {
+        bedtime = "8:00 pm for children age " + age + " during winter or spring";
+      } else if (age >= 6 && age <= 12 && season === "summer") {
+        bedtime = "9:30 pm for children age " + age + " during summer";
+      } else if (age >= 6 && age <= 12) {
+        bedtime = "8:30 pm for children age " + age + " during fall, winter, or spring";
+      } else if (age >= 13 && season === "summer") {
+        bedtime = "10:30pm for children age " + age + " during summer";
+      } else {
+        bedtime = "9:30pm for children age " + age + " during fall, winter, or spring";
+      }
+
+      // Display bedtime
+      document.getElementById("output5").innerHTML = "Bedtime: " + bedtime;
+    }
   </script>
 </head>
 
@@ -50,6 +88,18 @@
   Subtotal: <input type='number' id="in2a">
   <button type="button" onclick="calculateTotal();">Calculate Total</button><br>
   <div id="output2"></div>
+
+
+  <h2>Ch 7: Assignment 5 - Bedtime</h2>
+  Age: <input type='number' id="in5a">
+  Season: <select id="in5b">
+    <option value="spring">Spring </option>
+    <option value="summer">Summer </option>
+    <option value="fall">Fall </option>
+    <option value="winter">Winter </option>
+  </select>
+  <button type="button" onclick="calculateBedtime();">Bedtime</button><br>
+  <div id="output5"></div>
 
 </body>
 
