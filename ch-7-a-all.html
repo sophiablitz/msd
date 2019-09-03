@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 7: All Assignments</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    // Assignment 2
+    /* Defining Table
+     * Input: 
+        - subtotal of transaction
+     * Processing: 
+        - Determine if 10% savings applies
+        --- Determine if subtotal is over $50
+        --- Get current day of the week
+        --- Determine if current day is a discount day (tues or wed)
+        --- Reduce subtotal by 10% if valid
+        - Calculate total with tax ( subtotal * 1.06)
+        - Display total amount due 
+     * Output:
+        - Total amount due
+     */
+    function calculateTotal() {
+      // Get the two numbers, the operation, and the answer
+      let subtotal = parseFloat(document.getElementById("in2a").value);
+
+      // Determine if 10% savings applies
+
+      if (subtotal > 50) // Determine if subtotal is over $50
+      {
+        let today = new Date().getDay(); // Get current day of the week
+        
+        if (today === 2 || today === 3 ){ //Determine if current day is a discount day (tues-2 or wed-3)
+          subtotal *= 0.9; // reduce subtotal by 10% aka mulitply by 0.9
+        }
+      }
+      // Calculate total with tax ( subtotal * 1.06)
+      let total = subtotal * 1.06;
+
+      // Display total amount due 
+      document.getElementById("output2").innerHTML = "Total due: $" + total.toFixed(2);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 7: All Assignments</h1>
+  <h2>Ch 7: Assignment 2 - Day of the Week</h2>
+  Subtotal: <input type='number' id="in2a">
+  <button type="button" onclick="calculateTotal();">Calculate Total</button><br>
+  <div id="output2"></div>
+
+</body>
+
+</html>
