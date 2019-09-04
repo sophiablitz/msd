@@ -38,7 +38,7 @@ Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html]
 4. (not required)
 5. Triangular Prism Volume: [https://sophiablitz.github.io/msd-cs301/ch-9-a-5.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-5.html)  
 6. (not required)
-7.  
+7. Investment Calculator: [https://sophiablitz.github.io/msd-cs301/ch-9-a-7.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-7.html)
 8.  
 
 ## Chapter 10
