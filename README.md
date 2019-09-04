@@ -42,7 +42,7 @@ Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html]
 8. Loan Calculator: [https://sophiablitz.github.io/msd-cs301/ch-9-a-8.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-8.html)
 
 ## Chapter 10
-All assignments (2-7, 10)
+All assignments (2-7, 10): [https://sophiablitz.github.io/msd-cs301/ch-10-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-10-a-all.html)  
 All assignments (11, 12)
 
 ## Chapter 12
