@@ -33,7 +33,7 @@ Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html]
 
 ## Chapter 9
 1. Guessing Game: [https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html)  
-2.  
+2. Temp Conversion: [https://sophiablitz.github.io/msd-cs301/ch-9-a-2.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-2.html)  
 3.  
 5.  
 7.  
