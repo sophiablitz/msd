@@ -26,7 +26,7 @@ All assignments (1 - 6): [https://sophiablitz.github.io/msd-cs301/ch-6-a-all.htm
 All assignments (2 and 5): [https://sophiablitz.github.io/msd-cs301/ch-7-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-7-a-all.html)
 
 ## Chapter 8
-All assignments (1 and 10): [https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html)
+All assignments (1 - 10): [https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-8-a-all.html)
 
 ## Lesson 4 Extra Assignments
 Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html](https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html)
