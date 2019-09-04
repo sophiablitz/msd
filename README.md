@@ -35,7 +35,9 @@ Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html]
 1. Guessing Game: [https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html)  
 2. Temp Conversion: [https://sophiablitz.github.io/msd-cs301/ch-9-a-2.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-2.html)  
 3. Wind Chill Calculator: [https://sophiablitz.github.io/msd-cs301/ch-9-a-3.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-3.html)  
+4. (not required)
 5. Triangular Prism Volume: [https://sophiablitz.github.io/msd-cs301/ch-9-a-5.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-5.html)  
+6. (not required)
 7.  
 8.  
 
