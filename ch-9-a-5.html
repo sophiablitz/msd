@@ -8,9 +8,9 @@
   <script>
     function doInputOutput() {
       let sideA = parseFloat(document.getElementById("input1").value);
-      let sideB = parseFloat(document.getElementById("input1").value);
-      let sideC = parseFloat(document.getElementById("input1").value);
-      let length = parseFloat(document.getElementById("input1").value);
+      let sideB = parseFloat(document.getElementById("input2").value);
+      let sideC = parseFloat(document.getElementById("input3").value);
+      let length = parseFloat(document.getElementById("input4").value);
       document.getElementById("output").innerHTML = prismVolume(sideA, sideB, sideC, length) + ".";
     }
     function prismVolume(a, b, c, l) {
