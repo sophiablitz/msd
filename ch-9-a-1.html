@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 1</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function numberGuessGame() {
+      let message = "i'm thinking of a number between 1 and 100. \n" +
+        "Try to guess it!\n" +
+        "Please enter an integer between 1 and 100.";
+      let answer = parseInt(Math.ceil(Math.random() * 100));
+      console.log("Random number is: " + answer);
+      let guess;
+      let guessCounter = 0;
+      do {
+        guess = parseInt(prompt(message));
+        guessCounter++;
+        if (guess < answer) {
+          message = guess + " is too low. Please enter another integer.";
+        }
+        else if (guess > answer) {
+          message = guess + " is too high. Please enter another integer.";
+        }
+      } while (guess != answer);
+      message = guess + " is correct! You used " + guessCounter + " guess(es).";
+      alert(message);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 1 - Guessing Game</h1>
+  Press start to begin game. (see JS console for answer) <button type="button" onclick="numberGuessGame();">Start</button><br>
+
+
+</body>
+
+</html>
