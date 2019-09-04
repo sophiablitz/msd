@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 5</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function doInputOutput() {
+      let sideA = parseFloat(document.getElementById("input1").value);
+      let sideB = parseFloat(document.getElementById("input1").value);
+      let sideC = parseFloat(document.getElementById("input1").value);
+      let length = parseFloat(document.getElementById("input1").value);
+      document.getElementById("output").innerHTML = prismVolume(sideA, sideB, sideC, length) + ".";
+    }
+    function prismVolume(a, b, c, l) {
+      let area = triangleArea(a, b, c);
+      return area * l;
+    }
+
+    function triangleArea(a, b, c) {
+      let s = (a + b + c) / 2;
+      return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 5 - Calculate Volume of Triangular Prism</h1>
+  Triangle side length a: <input type="number" id="input1"> <br>
+  Triangle side length b: <input type="number" id="input2"> <br>
+  Triangle side length c: <input type="number" id="input3"> <br>
+  Prism lenght: <input type="number" id="input4"> <br>
+  <button type="button" onclick="doInputOutput();">Volume</button><br>
+  Prism Volume: <div id="output"></div>
+
+
+</body>
+
+</html>
