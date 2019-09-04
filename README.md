@@ -30,3 +30,18 @@ All assignments (1 - 10): [https://sophiablitz.github.io/msd-cs301/ch-8-a-all.ht
 
 ## Lesson 4 Extra Assignments
 Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html](https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html)
+
+## Chapter 9
+1. Guessing Game: [https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html](https://sophiablitz.github.io/msd-cs301/ch-9-a-1.html)  
+2.  
+3.  
+5.  
+7.  
+8.  
+
+## Chapter 10
+All assignments (2-7, 10)
+All assignments (11, 12)
+
+## Chapter 12
+All assignments 
