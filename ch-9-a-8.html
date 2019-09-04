@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 8</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function doPayment() {
+      let principal = parseFloat(document.getElementById("input1").value);
+      let annualRate = parseFloat(document.getElementById("input2").value);
+      let years = parseInt(document.getElementById("input3").value);
+      let periodsPerYear = parseInt(document.getElementById("input4").value);
+      document.getElementById("output1").innerHTML = "$" + computePayment(principal, annualRate, years, periodsPerYear).toFixed(2);
+    }
+    function doBalance() {
+      let principal = parseFloat(document.getElementById("input1").value);
+      let annualRate = parseFloat(document.getElementById("input2").value);
+      let years = parseInt(document.getElementById("input3").value);
+      let periodsPerYear = parseInt(document.getElementById("input4").value);
+      let numPaymentsPaid = parseInt(document.getElementById("input5").value);
+      document.getElementById("output2").innerHTML = "$" + computeBalance(principal, annualRate, years, periodsPerYear, numPaymentsPaid).toFixed(2);
+    }
+    function computePayment(principal, annualRate, years, periodsPerYear) {
+      let a = principal;
+      let n = years * periodsPerYear;
+      let r = annualRate / periodsPerYear;
+      return a * r / (1 - Math.pow((1 + r), -1 * n));
+    }
+    function computeBalance(principal, annualRate, years, periodsPerYear, numPaymentsPaid) {
+      let a = principal;
+      let d = numPaymentsPaid;
+      let r = annualRate / periodsPerYear;
+      let p = computePayment(principal, annualRate, years, periodsPerYear);
+      return a * Math.pow(1 + r, d) - ((p * (Math.pow(1 + r, d) - 1)) / r);
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 8 - Loan Calculator</h1>
+  <table>
+  <tr><td>Amount invested (principal): </td><td><input type="number" id="input1"></td></tr>
+  <tr><td>Annual rate (ex: 0.08): </td><td><input type="number" id="input2"></td></tr>
+  <tr><td>Number of years: </td><td><input type="number" id="input3"></td></tr>
+  <tr><td>Payments per year: </td><td><input type="number" id="input4"></td></tr>
+  <tr><td><button type="button" onclick="doPayment();">Compute payment</button></td><td><span id="output1"></span></td></tr>
+  <tr><td>Number of payments paid to date: </td><td><input type="number" id="input5"> </td></tr>
+  <tr><td><button type="button" onclick="doBalance();">Compute payoff amount</button></td><td><span id="output2"></span></td></tr>
+</table>
+
+
+</body>
+
+</html>
