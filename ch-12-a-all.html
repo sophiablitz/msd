@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 12: All Assignment</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    // Assignment 1
+    function extractGivenName(fullName) {
+      let start = fullName.indexOf(" ") + 1;
+      return fullName.substring(start, fullName.length);
+    }
+    // Assignment 1 helper
+    function test1() {
+      let input = document.getElementById("input1").value;
+      document.getElementById("output1").innerHTML = extractGivenName(input);
+    }
+
+    // Assignment 2
+    function prefix(word1, word2) {
+      // get length of smaller word
+      let length = Math.min(word1.length, word2.length);
+
+
+      // find prefix in common
+      let pref;
+      let i = 0;
+      while (word1.substr(0, i) === word2.substr(0, i) && i < length) {
+        pref = word1.substr(0, i);
+        i++;
+      }
+
+      return pref;
+    }
+    // Assignment 2 helper
+    function test2() {
+      let inputA = document.getElementById("input2a").value;
+      let inputB = document.getElementById("input2b").value;
+      document.getElementById("output2").innerHTML = prefix(inputA, inputB);
+    }
+
+    // Assignment 3
+    function suffix(word1, word2) {
+      // get length of smaller word
+      let length = Math.min(word1.length, word2.length);
+
+
+      // find suffix in common
+      let suf;
+      let i = 0;
+      while (word1.substr(word1.length - i, i) === word2.substr(word2.length - i, i) && i < length) {
+        suf = word1.substr(word1.length - i, i);
+        i++;
+      }
+
+      return suf;
+
+    }
+    // Assignment 3 helper
+    function test3() {
+      let inputA = document.getElementById("input3a").value;
+      let inputB = document.getElementById("input3b").value;
+      document.getElementById("output3").innerHTML = suffix(inputA, inputB);
+    }
+
+    // Assignment 4
+    function switchCase(s) {
+      let c;
+      let output = "";
+      for (let i = 0; i < s.length; i++) {
+        c = s.charAt(i);
+        output += canBeLowercase(c) ? c.toLowerCase() : c.toUpperCase();
+      }
+      return output;
+
+    }
+    // Assignment 4 helpers
+    function test4() {
+      let input = document.getElementById("input4").value;
+      document.getElementById("output4").innerHTML = switchCase(input);
+    }
+    function canBeLowercase(c) {
+      return c !== c.toLowerCase()
+    }
+
+
+    // Assignment 5
+    function titleCase(s) {
+      // Remove trailing whitespaces
+      s.trim();
+
+      let output = "";
+      let capitalizeNext = true;
+
+      for (let i = 0; i < s.length; i++) {
+        output += capitalizeNext ? s.charAt(i).toUpperCase() : s.charAt(i);
+        capitalizeNext = s.charAt(i) === " ";
+      }
+      return output;
+    }
+    // Assignment 5 helper
+    function test5() {
+      let input = document.getElementById("input5").value;
+      document.getElementById("output5").innerHTML = titleCase(input);
+    }
+
+  </script>
+  <style>
+    tr:nth-child(odd) {
+      background: lightblue;
+    }
+
+    td {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Chapter 12: All Assignments</h1>
+  <table>
+    <tr>
+      <td>Assignment 1 - extractGivenName(fullName)</td>
+      <td>Full Name: <input type='text' id="input1"></td>
+      <td><button type="button" onclick="test1();">Try it!</button></td>
+      <td><span id="output1"></span></td>
+    </tr>
+    <tr>
+      <td>Assignment 2 - prefix(s1,s2)</td>
+      <td>String 1: <input type='text' id="input2a"><br>String 2: <input type='text' id="input2b"></td>
+      <td><button type="button" onclick="test2();">Try it!</button></td>
+      <td><span id="output2"></span></td>
+    </tr>
+    <tr>
+      <td>Assignment 3 - suffix(s1,s2)</td>
+      <td>String 1: <input type='text' id="input3a"><br>String 2: <input type='text' id="input3b"></td>
+      <td><button type="button" onclick="test3();">Try it!</button></td>
+      <td><span id="output3"></span></td>
+    </tr>
+    <tr>
+      <td>Assignment 4 - switchCase(s) </td>
+      <td>Full Name: <input type='text' id="input4"></td>
+      <td><button type="button" onclick="test4();">Try it!</button></td>
+      <td><span id="output4"></span></td>
+    </tr>
+    <tr>
+      <td>Assignment 5 - titleCase(s) </td>
+      <td>Full Name: <input type='text' id="input5"></td>
+      <td><button type="button" onclick="test5();">Try it!</button></td>
+      <td><span id="output5"></span></td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>
