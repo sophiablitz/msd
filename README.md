@@ -43,7 +43,7 @@ Make three tables: [https://sophiablitz.github.io/msd-cs301/Lesson-4-extra.html]
 
 ## Chapter 10
 All assignments (2-7, 10): [https://sophiablitz.github.io/msd-cs301/ch-10-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-10-a-all.html)  
-Assignment 12: [https://sophiablitz.github.io/msd-cs301/ch-10-a-11.html](https://sophiablitz.github.io/msd-cs301/ch-10-a-11.html)  
+Assignment 11: [https://sophiablitz.github.io/msd-cs301/ch-10-a-11.html](https://sophiablitz.github.io/msd-cs301/ch-10-a-11.html)  
 Assignment 12: [https://sophiablitz.github.io/msd-cs301/ch-10-a-12.html](https://sophiablitz.github.io/msd-cs301/ch-10-a-12.html) 
 
 ## Chapter 12
