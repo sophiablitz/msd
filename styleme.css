@@ -1,0 +1,52 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  background-color:#008080;
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+  margin-top:25px;  
+  text-align:center;
+}
+header{
+  padding:20px;
+}
+h1, h2, h3{
+  text-align:center;
+}
+#classes{
+  padding:20px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+#classes h3{
+  background:#00A0a0;
+  padding:25px; 
+}
+#classes div {
+  width:50vw;
+  text-align:center;
+  margin: 15px auto;
+}
+li{
+  list-style-type: none;
+  padding: 10px 0px;
+  margin:0px;
+}
+ul li:nth-of-type(odd){
+  background-color:#003030;
+  width:100%;
+}
+ul li:nth-of-type(even){
+  background-color:#005050;
+  width:100%;
+}
+li img{
+  padding: 15px 0px;
+}
