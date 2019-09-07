@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+
+    function question1() {
+      let x = 1;
+      let y = '2';
+      let z = true;
+      s = x + y;
+      console.log(s) // output?
+      console.log(typeof s) // output?
+      x = x + z;
+      console.log(x) // output?
+      console.log(typeof x) // output?
+      x = ++x * y;
+      console.log(x); // output?
+      console.log(typeof x); // output?
+      s = parseInt(s)
+      s += '3';
+      console.log(s); // output?
+      console.log(typeof s); // output?
+      z = !z;
+      console.log(z); // output?
+      console.log(typeof z); // output?
+    }
+    function sum() {
+      let num1 = document.getElementById("first_value").value;
+      num1 = parseFloat(num1);
+      let num2 = document.getElementById("second_value").value;
+      num2 = parseFloat(num2);
+      document.getElementById("result").innerHTML = num1 + num2;
+    }
+    function calculateTax() {
+      let grossSalary = parseFloat(document.getElementById("grossSalary").value);
+      let tax;
+      if (grossSalary <= 20000) {
+        tax = 0;
+      } else if (grossSalary <= 50000) {
+        tax = 0.05 * grossSalary;
+      } else {
+        tax = 0.1 * grossSalary;
+      }
+      document.getElementById("tax").innerHTML = "$" + tax;
+    }
+    function calculateArea() {
+      let radius = parseFloat(prompt("Enter the radius of the circle."));
+      while (radius <= 0) {
+        radius = parseFloat(prompt("ERROR - the radius must be a positive number.\nEnter the radius of the circle."));
+      }
+      alert("A=" + Math.PI * Math.pow(radius, 2));
+    }
+    function question5() {
+      let message = "";
+      for (let i = 10; i <= 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+          message += i + " ";
+        }
+      }
+      alert(message);
+    }
+    function question6() {
+      let message = "";
+      let age = parseInt(prompt("Enter your age:"));
+      if (age<=0) {message="How are you typing this if you aren't even born yet?"}
+      for (let i = 0; i < age; i++) {
+        message += "Happy Birthday! ";
+      }
+      alert(message);
+    }
+    function question7() {
+      var x = 1, y = 7;
+      var message = "Hi";
+      if (x > 2) {
+        if (y === 7) {
+          message = "Bye";
+        }
+      } else {
+        message = "Hello";
+      }
+      console.log(message);
+    }
+    function question8() {
+      for (let i = 0; i > 3; i++) {
+        alert("Goodbye");
+      }
+    }
+    function question9() {
+      let i = 0;
+      while (i < 3) {
+        alert("Snow");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Question 1</h2>
+
+  let x = 1; <br>
+  let y = '2'; <br>
+  let z = true; <br>
+  s = x + y; <br>
+  console.log(s) // output? <br>
+  console.log(typeof s) // output? <br>
+  x = x + z; <br>
+  console.log(x) // output? <br>
+  console.log(typeof x) // output? <br>
+  x = ++x * y; <br>
+  console.log(x); // output? <br>
+  console.log(typeof x); // output? <br>
+  s = parseInt(s) <br>
+  s += '3'; <br>
+  console.log(s); // output? <br>
+  console.log(typeof s); // output? <br>
+  z = !z; <br>
+  console.log(z); // output? <br>
+  console.log(typeof z); // output? <br>
+
+  <input type="button" onclick="question1()" value="run">
+  <h2>Question 2</h2>
+  Value1: <input type="text" id="first_value"><br>
+  Value2: <input type="text" id="second_value"><br>
+  <input type="button" onclick="sum()" value="Add"><br>
+  Result: <span id="result"></span>
+
+  <h2>Question 3</h2>
+  <p>Write a JavaScript program that asks user to input gross salary and shows the federal tax he/she
+    need to pay for the year. Federal tax brackets are as follows <br>
+    a. Salary up to 20K, don't have to pay any federal tax<br>
+    b. Salary above 20K and up to 50K, 5% of the salary<br>
+    c. Salary above 50K needs to pay 10% of the salary </p>
+  <input type="number" id="grossSalary">
+  <input type="button" onclick="calculateTax()" value="Tax"><br>
+  Tax: <span id="tax"></span>
+
+  <h2>Question 4</h2>
+  <p>Write a JavaScript program that asks radius of a circle as input from the user and prints the area
+    of the circle using formula (πr2). Program should keep on prompting user to enter correct value,
+    until the value enter is a positive number. Use Math object for getting the value of π and getting
+    the square of the radius.</p>
+  <input type="button" onclick="calculateArea()" value="Run"><br>
+
+  <h2>Question 5</h2>
+  <p>Write a JavaScript program that prints numbers between 10 and 100 that are multiple of both 3
+    and 5</p>
+  <input type="button" onclick="question5()" value="Run"><br>
+  <h2>Question 6</h2>
+  <p>Write a program that asks for users age and prints "Happy Birthday!" based on the age. For e.g.
+    if the user enter 5, program should print "Happy Birthday!" five time</p>
+  <input type="button" onclick="question6()" value="Run"><br>
+  <h2>Question 7</h2>
+  <p>What will be the output?</p>
+  <code>
+      var x = 1, y = 7; <br>
+      var message = "Hi";<br>
+      if (x > 2) {<br>
+       if (y === 7) {<br>
+       message = "Bye";<br>
+       }<br>
+      } else {<br>
+       message = "Hello";<br>
+      }<br>
+      console.log(message);</code> <br>
+  <input type="button" onclick="question7()" value="run">
+  <h2>Question 8</h2>
+  <p>Given the following JavaScript code, how many times will the computer display the word
+    "Goodbye"?</p>
+  <code>
+    for (let i = 0; i > 3; i++) {<br>
+    alert("Goodbye");<br>
+    }
+  </code> <br>
+  <input type="button" onclick="question8()" value="run">
+  <h2>Question 9</h2>
+  <p>Given the following JavaScript code, how many times will the computer display the word
+    "Snow"?</p>
+  <code>
+      let i = 0; <br>
+      while (i < 3) { <br>
+      alert("Snow"); <br>
+      }</code> <br>
+  <input type="button" onclick="question9()" value="run">
+</body>
+
+</html>
