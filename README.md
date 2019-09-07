@@ -48,3 +48,6 @@ Assignment 12: [https://sophiablitz.github.io/msd-cs301/ch-10-a-12.html](https:/
 
 ## Chapter 12
 All assignments: [https://sophiablitz.github.io/msd-cs301/ch-12-a-all.html](https://sophiablitz.github.io/msd-cs301/ch-12-a-all.html)  
+
+## Lesson 9 - More HTML
+About Me Simple Webpage: [https://sophiablitz.github.io/msd-cs301/L9-more-html.html](https://sophiablitz.github.io/msd-cs301/L9-more-html.html)  
