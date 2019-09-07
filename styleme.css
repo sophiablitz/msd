@@ -48,5 +48,6 @@ ul li:nth-of-type(even){
   width:100%;
 }
 li img{
+  width:100%;
   padding: 15px 0px;
 }
