@@ -51,3 +51,10 @@ All assignments: [https://sophiablitz.github.io/msd-cs301/ch-12-a-all.html](http
 
 ## Lesson 9 - More HTML
 About Me Simple Webpage: [https://sophiablitz.github.io/msd-cs301/L9-more-html.html](https://sophiablitz.github.io/msd-cs301/L9-more-html.html)  
+
+## Lesson 10 - CSS
+Pie Recipe HTML: [https://sophiablitz.github.io/msd-cs301/Lesson%2010/pie.html](https://sophiablitz.github.io/msd-cs301/Lesson%2010/pie.html)  
+
+
+## Lesson 11 - CSS Layouts
+Journal HTML: [https://sophiablitz.github.io/msd-cs301/Lesson%2011/journal.html](https://sophiablitz.github.io/msd-cs301/Lesson%2011/journal.html)  
