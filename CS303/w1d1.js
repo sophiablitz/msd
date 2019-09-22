@@ -1,4 +1,5 @@
 /** 
+ * Slides: https://online.cs.mum.edu/access/content/group/f36f088a-b353-4765-bb36-1fd3d8656940/lectures/w1d1functionsAndArraysReview.pdf
  * Exercise: https://javascript.info/function-expressions-arrows#tasks
  *   Rewrite with arrow functions
  * Exercises https://javascript.info/array#tasks
