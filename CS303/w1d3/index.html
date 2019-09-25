@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <style>
+    .part {
+      padding: 20px;
+    }
+    textarea {
+      width: 300px;
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script src="w1d3_part1.js">    </script>
+  <script src="w1d3_part2.js">    </script>
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+    <p>See code in w1d3_part1.js</p>
+    <h3>Object: Exercises</h3>
+    <ul>
+      <li><button onclick="helloObject()">Hello object</button></li>
+      <li><button onclick="checkForEmptiness()">Check for emptiness</button></li>
+      <li><button onclick="constantobjects()">Constant objects?</button></li>
+      <li><button onclick="sumObjectProperties()">Sum object properties</button></li>
+      <li><button onclick="multiplyNumericPropertiesBy2()">Multiply numeric properties by 2</button></li>
+    </ul>
+    <h3>Object Methods: Exercises</h3>
+    <ul>
+      <li><button onclick="syntaxCheck()">Syntax check</button></li>
+      <li><button onclick="explainTheValueOfThis()">Explain the value of "this“</button></li>
+      <li><button onclick="usingThisInObjectLiteral()">Using This In Object Literal</button></li>
+      <li><button onclick="createACalculator()">Create a calculator</button></li>
+      <li><button onclick="chaining()">Chaining</button></li>
+    </ul>
+    <h3>Object Constructor, Operator 'new': Exercises</h3>
+    <ul>
+      <li><button onclick="twoFunctionsOneObject()">Two functions – one object</button></li>
+      <li><button onclick="createNewCalculator()">Create New Calculator</button></li>
+      <li><button onclick="createNewAccumulator()">Create New Accumulator</button></li>
+    </ul>
+  </div>
+  <div id="part2" class="part">
+    <h1>Part 2</h1>
+    <p>See code in w1d3_part2.js</p>
+    Title: <input type="text" id="title"> <br>
+    Author: <input type="text" id="author"> <br>
+    Library ID: <input type="text" id="libraryId"> <br>
+    <button type="button" onclick="onAddBook();">Add Book</button>
+    <h2>Books on file</h2>
+    View: <button type="button" onclick="onViewButtonClick('title');">Title</button>
+    <button type="button" onclick="onViewButtonClick('author');">Author</button>
+    <button type="button" onclick="onViewButtonClick('libraryID');">ID</button> <br>
+    <textarea type="textarea" id="books"></textarea>
+  </div>
+
+
+</body>
