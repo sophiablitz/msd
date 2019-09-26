@@ -3,10 +3,25 @@
 
 
 <head>
+  <!-- add mocha css, to show results -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"> -->
+  <!-- add mocha framework code -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script> -->
+  <!-- <script>
+    mocha.setup('bdd'); // minimal setup
+  </script> -->
+  <!-- add chai -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script> -->
+<!-- 
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script> -->
   <style>
     .part {
       padding: 20px;
     }
+
     textarea {
       width: 300px;
       height: 200px;
@@ -15,9 +30,12 @@
 </head>
 
 <body>
-
+  <!-- <script src="https://en.js.cx/test/libs.js"></script> -->
+  <!-- <script src="./node_modules/sinon/pkg/sinon.js"></script> -->
   <script src="w1d3_part1.js">    </script>
   <script src="w1d3_part2.js">    </script>
+  <!-- <script src="w1d3_test.js">    </script> -->
+
   <div id="part1" class="part">
     <h1>Part 1</h1>
     <p>See code in w1d3_part1.js</p>
@@ -57,6 +75,13 @@
     <button type="button" onclick="onViewButtonClick('libraryID');">ID</button> <br>
     <textarea type="textarea" id="books"></textarea>
   </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <!-- <div id="mocha"></div> -->
+
+  <!-- run tests! -->
+  <!-- <script>
+    mocha.run();
+  </script> -->
 
 
 </body>

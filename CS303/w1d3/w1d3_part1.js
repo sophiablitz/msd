@@ -241,6 +241,7 @@ function usingThisInObjectLiteral() {
  *    sum() returns the sum of saved values.
  *    mul() multiplies saved values and returns the result.
 */
+
 function createACalculator() {
   let calculator = {
     read() {
