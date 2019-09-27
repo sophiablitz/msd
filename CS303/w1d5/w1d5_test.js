@@ -1,5 +1,5 @@
 "use strict";
-/* global assert getWeekDay getLocalDay getDateAgo*/
+/* global assert topSalary getWeekDay getLocalDay getDateAgo*/
 
 /*****************************
  *  DESTRUCTURING ASSIGNMENT
