@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <script src="w2d2_part1.js">    </script>
+  <script src="w2d2_part2.js">    </script>
+
+  <h1>Homework w2d2</h1>
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+    <p>See code in w2d2_part1.js</p>
+    <p>Section: Recursion and stack
+      <ul>
+        <li>Sum all numbers till the given one</li>
+        <li>Calculate factorial</li>
+        <li>Fibonacci numbers</li>
+        <li>Output a single-linked list</li>
+        <li>EC: Output a single-linked list in reverse order</li>
+      </ul>
+    </p>
+    <h1>Part 2</h1>
+    <p>See code in w2d2_part2.js </p>
+    <p>Write a recursive function that will print “name: value” to the console for every node in the
+      following tree data structure. Then write an iterative function that also does this. The following is the
+      output you should have for the recursive version. The iterative version should be similar, but it is not
+      necessary for every line to be in the same order.</p>
+    <!-- <p>See tests in w2d2_test.js</p> -->
+  </div>
+
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+
+
+</body>
