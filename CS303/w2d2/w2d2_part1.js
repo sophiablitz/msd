@@ -131,21 +131,21 @@ function fibonacciRecursiveSlow(n) {
 }
 function fib(n, previous = 1, current = 1, i = 2) {
   if (n <= 0) {
-    console.log(`0th element of fib is null. i is ${i}`);
+    // console.log(`0th element of fib is null. i is ${i}`);
     return null;
   }
   else if (n == 1 || n == 2) {
-    console.log(`1st and 2nd element of fib is 1. i is ${i}`);
+    // console.log(`1st and 2nd element of fib is 1. i is ${i}`);
     return 1;
   }
   else if (i < n) {
-    console.log(`i is ${i}.\ncurrent is ${current}.\nprevious is ${previous}.`);
+    // console.log(`i is ${i}.\ncurrent is ${current}.\nprevious is ${previous}.`);
     let temp = current;
     current = current + previous;
     previous = temp;
     i++;
 
-    console.log(`i is ${i}.\ncurrent is ${current}.\nprevious is ${previous}.`);
+    // console.log(`i is ${i}.\ncurrent is ${current}.\nprevious is ${previous}.`);
     return fib(n, previous, current, i);
   }
   else {

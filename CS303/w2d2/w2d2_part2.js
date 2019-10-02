@@ -25,6 +25,13 @@ let node1 = {
   value: null,
 };
 
+/**
+ * Print to the console the 'name' and 'value' property of a node and
+ * all of its descendants up to and including the third generation.
+ *
+ * @param {object} node object with properties 'name', 'value' and 'children'
+ *    where children is either null or an array of similar nodes.
+ */
 function printNameValuePairsLoop(node) {
   console.log(`${node.name}: ${node.value}`);
   if (node.children) {
