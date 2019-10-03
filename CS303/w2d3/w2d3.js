@@ -156,7 +156,7 @@ function runSortByField() {
 
   console.log("***By name:***");
   result = users.sort((a, b) => a.name > b.name ? 1 : -1); // by name (Ann, John, Pete)
-  result.forEach(val=>{console.log(val.name + " " + val.age)});
+  result.forEach(val => { console.log(val.name + " " + val.age) });
 
   console.log("***By age:***");
   result = users.sort((a, b) => a.age > b.age ? 1 : -1); // by age (Pete, Ann, John)
@@ -201,8 +201,8 @@ function makeArmy() {
 
   return shooters;
 }
-function makeShooter(n){
-  return ()=>{console.log(n)};
+function makeShooter(n) {
+  return () => { console.log(n) };
 }
 function runArmyOfFunctions() {
 
@@ -211,4 +211,45 @@ function runArmyOfFunctions() {
   army[0](); // the shooter number 0 shows 10
   army[5](); // and number 5 also outputs 10...
   // ... all shooters show 10 instead of their 0, 1, 2, 3...
+}
+
+
+/** Set and decrease for counter
+Modify the code of makeCounter() so that the counter can also decrease and set the number:
+
+  counter() should return the next number (as before).
+  counter.set(value) should set the counter to value.
+  counter.decrease() should decrease the counter by 1.
+
+P.S. You can use either a closure or the function property to keep the current count. 
+Or write both variants. 
+*/
+function runSetAndDecreseForCounter() {
+
+
+  let counter = makeCounter();
+
+  console.log(counter());
+  counter.count = 10;
+  console.log(counter()); // 10
+  console.log(counter.set(3)); // 3
+  console.log(counter.decrease()); // 2
+}
+function makeCounter() {
+
+  function counter() {
+    return counter.count++;
+  };
+  counter.count = 0;
+
+  counter.set = (n) => {
+    counter.count = n;
+    return counter.count;
+  };
+  
+  counter.decrease = () => {
+    counter.count--;
+    return counter.count;
+  };
+  return counter;
 }

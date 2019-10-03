@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
 </head>
 
 <body>
   <script src="w2d3.js">    </script>
+  <script src="w2d3_test.js">    </script>
 
   <h1>Homework w2d3</h1>
   <h3>Sophia Blitz</h3>
@@ -19,6 +35,15 @@
     <button onclick=runSumWithClosures();>Run Sum with Closures</button><br>
     <button onclick=runFilterThroughFunction();>Run Filter Through Function</button><br>
     <button onclick=runSortByField();>Run Sort By Field</button><br>
-    <button onclick=runArmyOfFunctions();>Run Army of Functions</button>
+    <button onclick=runArmyOfFunctions();>Run Army of Functions</button> <br> <br>
+    <button onclick=runSetAndDecreseForCounter();>Run Set and Decrese For Counter</button><br>
+
   </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
 </body>
