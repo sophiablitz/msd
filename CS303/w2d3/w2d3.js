@@ -15,10 +15,11 @@ function runAreCountersIndependent() {
 
   let counterA = makeCounter();
   let counterB = makeCounter();
-
+  console.log("counterA() x2");
   console.log(counterA()); // 0
   console.log(counterA()); // 1
 
+  console.log("counterB() x2");
   console.log(counterB()); // 0
   console.log(counterB()); // 1
 }
@@ -40,7 +41,6 @@ Yes, the counter variable is in the lexical environment of both up and down func
 and there for is referenced by both functions
 What will it show ? 
 1,2,1
-
 */
 function runCounterObject() {
   console.log("Begin: Counter Object");
@@ -60,12 +60,12 @@ function Counter() {
     return --count;
   };
 }
+
 /* Function in if
 Look at the code.What will be the result of the call at the last line ?
 
 sayHi will throw an error as it is referencing a function not defined in that lexical environment
  */
-
 function runFunctionInIf() {
   console.log("Begin: Function in if");
   let phrase = "Hello";
@@ -193,7 +193,12 @@ function makeArmy() {
   let shooters = [];
 
   let i = 0;
+
+  function makeShooter(n) {
+    return () => { console.log(n) };
+  }
   while (i < 10) {
+    let x = i;
     let shooter = makeShooter(i);
     shooters.push(shooter);
     i++;
@@ -201,16 +206,37 @@ function makeArmy() {
 
   return shooters;
 }
-function makeShooter(n) {
-  return () => { console.log(n) };
+
+function makeArmy2() {
+  let shooters = [];
+
+  let i = 0;
+
+  while (i < 10) {
+    let n = i;
+    let shooter = () => {
+      console.log(n) };
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
 }
+
 function runArmyOfFunctions() {
 
+  console.log("Option 1: function returns a function");
   let army = makeArmy();
-
   army[0](); // the shooter number 0 shows 10
   army[5](); // and number 5 also outputs 10...
   // ... all shooters show 10 instead of their 0, 1, 2, 3...
+
+  // RUN ALTERNATIVE
+  console.log("Option 2: let x=i inside while loop.");
+  army = makeArmy2();
+  army[0](); // the shooter number 0 shows 10
+  army[5](); // and number 5 also outputs 10...
+
 }
 
 
@@ -225,8 +251,7 @@ P.S. You can use either a closure or the function property to keep the current c
 Or write both variants. 
 */
 function runSetAndDecreseForCounter() {
-
-
+  
   let counter = makeCounter();
 
   console.log(counter());
@@ -246,7 +271,7 @@ function makeCounter() {
     counter.count = n;
     return counter.count;
   };
-  
+
   counter.decrease = () => {
     counter.count--;
     return counter.count;
