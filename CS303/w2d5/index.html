@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="w2d5_part1.js">    </script>
+  <script src="w2d5_part2.js">    </script>
+  <script src="w2d5_test.js">    </script>
+
+  <h1>Homework w2d5 - Recursion & Timer Practice</h1>
+  <h3>Sophia Blitz</h3>
+
+  <div id="part1" class="part">
+    <h1>Part 1 - Recursive Exercises</h1>
+
+    <p>See output in console. Click the buttons to run each exercise.</p>
+    <button onclick=runIsValueInTree();>Run Is Value In Tree</button> <br>
+    <button onclick=runFindSubTree();>Run Find Sub Tree</button><br>
+    <!-- the element with id="mocha" will contain test results -->
+    <button onclick=runCreateListNode();>Run Create List Node</button><br>
+    <button onclick=runFindListNode();>Run Find List Node </button><br>
+    <button onclick=runTreeModifer();>Run Tree Modifer </button><br>
+
+  </div>
+  <div id="part2" class="part">
+    <h1>Part 2 - Timer Exercises</h1>
+
+    <p>See output in console. Click the buttons to run each exercise.</p>
+    <button onclick=runOutputEverySecondWithSetInterval();>Run Output Every Second With Interval</button> <br>
+    <button onclick=runOutputEverySecondWithSetTimeout();>Run Output Every Second With Timeout</button> <br>
+    <button onclick=runWhatWillSetTimeoutShow();>Run What Will SetTimeout Show?</button><br>
+  </div>
+
+  <div id="extraCredit" class = "part">
+    <h1>Extra Credit</h1>
+
+    <button onclick="alert(fibonacci(+prompt('Find the nth value of Fibonacci. Enter n: ')));">Run Fibonacci</button>
+  </div>
+  <h1>Mocha Tests</h1>
+  <div id="mocha"></div>
+
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
