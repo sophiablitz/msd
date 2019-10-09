@@ -15,4 +15,4 @@
 I completed the assignments during class.
 
 # How long did it take?
-I worked for less than two hours on the assignment.
+I worked for less than three hours on the assignment.

@@ -52,7 +52,6 @@ function runSolutionAddToStringToTheDictionary() {
 
 
 
-
 /* The difference between calls
 Let’s create a new rabbit object: */
 function runTheDifferenceBetweenCalls1() {
