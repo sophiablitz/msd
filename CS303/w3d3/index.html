@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="w3d3_F_prototype.js">    </script>
+  <script src="w3d3_native_prototype.js">    </script>
+  <script src="w3d3_protoype_methods.js">    </script>
+  <script src="w3d3_person_teacher.js">    </script>
+  <script src="w3d3_test.js">    </script>
+
+  <h1>Homework w3d3</h1>
+  <h3>Sophia Blitz</h3>
+
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+
+    <p>Click the buttons to run each exercise.</p>
+
+
+    <h3>F.prototype</h3>
+
+    <h5>Task 1: Changing "prototype"</h5>
+    <ul>
+      <li><button onclick=runRabbit1();>Run Rabbit Variation 1</button> (alert)</li>
+      <li><button onclick=runRabbit2();>Run Rabbit Variation 2</button> (alert)</li>
+      <li><button onclick=runRabbit3();>Run Rabbit Variation 3</button> (alert)</li>
+      <li><button onclick=runRabbit4();>Run Rabbit Variation 4</button> (alert) </li>
+      <li><button onclick=runRabbit5();>Run Rabbit Variation 5</button> (alert)</li>
+    </ul>
+
+    <h5>Task 2: Create an object with the same constructor</h5>
+    <ul>
+      <li><button onclick=runObjWorking();>Run Obj Working</button> (console)</li>
+      <li><button onclick=runObjNotWorking();>Run Obj Not Working</button> (console)</li>
+    </ul>
+
+
+    <h3>Native prototypes</h3>
+    <h5>Task 1: Add Method f.defer()</h5>
+    <ul>
+      <li><button onclick=runAddMethodDefer();>Run Add Method Defer</button> (Alert - 2 second delay)</li>
+    </ul>
+
+    <h5>Task 2: Add the decorating defer() to functions</h5>
+    <ul>
+      <li><button onclick=runAddDecoratingDeferToFunctions();>Run Add Method Defer</button> (console)</li>
+    </ul>
+
+    <h3>Prototype methods, objects without __proto__</h3>
+    <h5>Task 1: Add toString to Dictionary</h5>
+    <ul>
+      <li><button onclick="runAddToStringToTheDictionary()"> Run Add toString to the Dictionary</button> (alert)</li>
+      <li><button onclick="runSolutionAddToStringToTheDictionary()"> Run Solution Add toString to the
+          Dictionary</button> (alert)
+      </li>
+    </ul>
+    <h5>Task 2: The Difference Between Calls</h5>
+    <ul>
+      <li><button onclick="runTheDifferenceBetweenCalls1()"> Run The Difference Between Calls</button> (alert)</li>
+    </ul>
+    <h3>Make a Teacher Object</h3>
+    <ul>
+      <li>
+        <button onclick="runMakeStudentAndTeacher()"> Run Make Student And Teacher</button> (console)</li>
+    </ul>
+  </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
