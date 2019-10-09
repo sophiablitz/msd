@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="w3d2.js">    </script>
+  <!-- <script src="w3d2_test.js">    </script> -->
+
+  <h1>Homework w3d2</h1>
+  <h3>Sophia Blitz</h3>
+
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+
+    <p>Click the buttons to run each exercise.</p>
+    <h3>Prototypal Inheritance</h3>
+    <ul>
+      <li><button onclick=runWorkingWithPrototype();>Run Working With Prototype</button> (alerts)</li>
+      <li><button onclick=runSearchingAlgorithm();>Run Searching Algorithm</button> (alerts)</li>
+      <li><button onclick=runSearchingAlgorithmTimeTest();>Run Searching Algorithm Time Test</button> (console)</li>
+      <li><button onclick=runWhereItWrites();>Run Where It Writes</button> (console) </li>
+      <li><button onclick=runWhyTwoHamstersArefull();>Run Why Two Hamsters Are full</button> (console)</li>
+    </ul>
+
+    <h3>Object Constructor, Operator 'new': Exercises</h3>
+    <ul>
+      <li><button onclick="twoFunctionsOneObject()">Two functions – one object</button> (alert)</li>
+      <li><button onclick="createNewCalculator()">Create New Calculator</button> (alert)</li>
+      <li><button onclick="createNewAccumulator()">Create New Accumulator</button> (alert)</li>
+    </ul>
+
+  </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
