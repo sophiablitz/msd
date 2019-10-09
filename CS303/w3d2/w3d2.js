@@ -156,10 +156,11 @@ function runWhereItWrites() {
 /* Why two hamsters are full?
 We have two hamsters: speedy and lazy inheriting from the general hamster object.
 
-When we feed one of them, the other one is also full. 
-  Why? The array object is the same object refered to in both examples of the hamsters.
+When we feed one of them, the other one is also full. Why? 
+  The array object is the same object refered to in both examples of the hamsters.
 
-  How to fix it? Assigning a new array object in the eat() method.
+How to fix it? 
+  Assigning a new array object in the eat() method.
 */
 
 function runWhyTwoHamstersArefull() {
