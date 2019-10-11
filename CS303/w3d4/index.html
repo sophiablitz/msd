@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="w3d4_class_basic_syntax.js">    </script>
+  <script src="w3d4_class_inheritance.js"></script>
+  <script src="account.js"></script>
+  <script src="savingsaccount.js"></script>
+  <script src="checkingaccount.js"></script>
+  <script src="bank.js"></script>
+  <script>
+    let bank = new Bank();
+    let actNum = bank.addAccount();
+    let checkActNum = bank.addCheckingAccount(-10);
+    let savingsActNum = bank.addSavingsAccount(3);
+    console.log(bank.accountReport());
+    bank.closeAccount(checkActNum);
+    console.log(bank.accountReport());</script>
+
+  <script src="test.js"></script>
+
+  <h1>Homework w3d4</h1>
+  <h3>Sophia Blitz</h3>
+
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+
+    <p>Click the buttons to run each exercise.</p>
+
+
+    <h3>Class Basic Syntax</h3>
+    <h5>Rewrite clock</h5>
+    <ul>
+      <li><button onclick=startClock();>Start Clock</button> (console)</li>
+      <li><button onclick=stopClock();>Stop Clock</button> (console)</li>
+    </ul>
+
+    <h3>Class Inheritance</h3>
+    <h5>Error Creating an Instance</h5>
+    <ul>
+      <li><button onclick=runErrorCreatingAnInstance();>Run Error Creating An Instance</button> (alert)</li>
+    </ul>
+    <h5>Create Extended Clock</h5>
+    <ul>
+      <li><button onclick=createExtendedClock();>Create Extended Clock</button> (console)</li>
+      <li><button onclick=startExtendedClock();>Start Extended Clock</button> (console)</li>
+      <li><button onclick=stopExtendedClock();>Stop Extended Clock</button> (console)</li>
+
+    </ul>
+
+    <h5>Class extends Object</h5>
+    <ul>
+      <li><button onclick=runClassExtendsObjectRabbit1();>Run First Rabbit</button> (alert)</li>
+      <li><button onclick=runClassExtendsObjectRabbit2();>Run Second Rabbit</button> (alert)</li>
+    </ul>
+
+  </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
