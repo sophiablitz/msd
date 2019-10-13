@@ -4,8 +4,8 @@
 // TODO: complete exercises named as todo
 //        - DONE arrays
 //        - DONE SkipSpace includes comments
-//        - explain closures
-//        - implement set
+//        - TODO explain closures
+//        - DONE implement set
 // TODO: Write mocha tests in test.js
 // TODO: Complete jsdoc documentation (see namespace documentation in assignment)
 // TODO: Create jsdoc webpage

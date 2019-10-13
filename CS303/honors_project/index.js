@@ -68,7 +68,7 @@ function onClickRun() {
       egg.run(program);
     } catch (error) {
       errorDiv.classList.remove("hidden");
-      errorDiv.innerHTML = "ERROR -- " + error.message;
+      errorDiv.innerHTML = "Uncaught " + error.name + ". " + error.message;
     }
   }
 }
