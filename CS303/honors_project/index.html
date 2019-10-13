@@ -19,31 +19,46 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body class="dark-theme-level-1 ">
   <script src="index.js">    </script>
   <script src="egg.js">    </script>
   <script src="test.js">    </script>
-  <div>
-    Egg! A javascript based coding language.
-  </div>
-  <div id="tryItOut" class="dark-theme-level-1">
-    <div id="toolbar" class="dark-theme-level-1">
-      <button id="rotate" class="toolbarBtn dark-theme-level-2" onclick="onClickRotate()">Rotate</button>
-      <button id="theme" class="toolbarBtn dark-theme-level-2" onclick="onClickChangeTheme()">Change Theme</button>
-      <button id="run" class="toolbarBtn dark-theme-level-2" onclick="onClickRun()">Run >></button>
-    </div>
-    <div id="demo">
-      <div id=" inputSection" class="section">
-        <textarea id="input" class=" dark-theme-level-2"></textarea>
+
+  <div id="egg" class="panel dark-theme-level-1 ">
+    <h1>Egg! A javascript based programming language.</h1>
+    <p>See <a href="https://eloquentjavascript.net/12_language.html">Eloquent Javascript</a> for instructions to
+      implement and starter code.</p>
+    <p>For more documentation, scroll down to <a href="#documentation">Documentation</a></p>
+    <div id="tryItOut" class="panel">
+
+      <div id="toolbar" class="dark-theme-level-1">
+        <button id="rotate" class="toolbarBtn dark-theme-level-2" onclick="onClickRotate()">Rotate</button>
+        <button id="theme" class="toolbarBtn dark-theme-level-2" onclick="onClickChangeTheme()">Change Theme</button>
+        <button id="run" class="toolbarBtn dark-theme-level-2" onclick="onClickRun()">Run >></button>
       </div>
-      <div id="outputSection" class="section">
-        <textarea id="output" class="section" readonly></textarea>
+      <div id="demo">
+        <div id=" inputSection" class="section">
+          <textarea id="input" class=" dark-theme-level-2"></textarea>
+        </div>
+        <div id="outputSection" class="section">
+          <textarea id="output" class="" readonly></textarea>
+        </div>
+        <div id="error" class="hidden"></div>
       </div>
-      <div id="error" class="hidden"></div>
     </div>
   </div>
-  <!-- the element with id="mocha" will contain test results -->
-  <div id="mocha"></div>
+  <div id="documentation" class="panel light-theme-level-1">
+    <h1>Egg Documentation</h1>
+  </div>
+  <div id="tests" class="panel">
+    <div>
+      <h1>Mocha Chai Tests for egg</h1>
+    </div>
+    <!-- the element with id="mocha" will contain test results -->
+    <div id="mocha"></div>
+
+  </div>
+
 
   <!-- run tests! -->
   <script>

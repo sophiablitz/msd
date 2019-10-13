@@ -3,42 +3,10 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    #tryItOut {
-      height: 100vh;
-      text-align: center;
-    }
-
-    .section {
-      display: inline-block;
-      min-width: 300px;
-      /*change with orientation*/
-      width: calc(50vw - 20px);
-      /*change with orientation*/
-      height: 80vh;
-    }
-
-    textarea {
-      width: 100%;
-      height: 100%;
-      font-size: 20pt;
-      border: none;
-      resize: none;
-      text-align: left;
-      padding: 5px;
-    }
-
-    #input {
-      /*change with theme*/
-      box-shadow: 0 0 2px 1px #444444;
-      font-family: monospace;
-    }
-
-    #output {
-      background-color: #eeeeee;
-      color: #222222;
-      box-shadow: 0 0 1px #555555;
-    }
-
+    .light-theme-level-1 { background-color: #dddddd; color: #222222; }
+    .light-theme-level-2 { background-color: #eeeeee; color: #222222; }
+    .dark-theme-level-1 { background-color: #444444; color: #eeeeee; }
+    .dark-theme-level-2 { background-color: #222222; color: #eeeeee; }
 
     #toolbar {
       padding-left: 5px;
@@ -54,47 +22,82 @@
     #run {
       background-color: #00bb77;
     }
-
-    .light-theme-level-1 {
-      background-color: #dddddd;
-      color: #222222;
-    }
-
-    .light-theme-level-2 {
-      background-color: #eeeeee;
-      color: #222222;
-    }
-
-    .dark-theme-level-1 {
-      background-color: #444444;
-      color: #eeeeee;
-    }
-
-    .dark-theme-level-2 {
-      background-color: #222222;
-      color: #eeeeee;
+    #tryItOut {
+      height: 75vh;
+      text-align: center;
+      /* resize: both; 
+      overflow: scroll;*/
+      border: 10px solid #444444;
     }
 
     #demo {
+      margin-top:5px;
+      background-color: green;
       position: relative;
-      height: 90vh;
+      height: 90%;
       background: none;
-      width: calc(100vw - 30px);
+      width: 100%;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
     }
+    .section {
+      display: inline-block;
+      /* min-width: 300px; */
+      /*change with orientation*/
+      width: calc(50% - 10px);
+      /*change with orientation*/
+      height: calc(100% - 50px);
+
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      font-size: 20pt;
+      border: none;
+      resize: none;
+      text-align: left;
+      padding: 5px;
+    }
+    
+    #input {
+      /*change with theme*/
+      box-shadow: 0 0 2px 1px #444444;
+      font-family: monospace;
+    }
+
+    #output {
+      background-color: #eeeeee;
+      color: #222222;
+      box-shadow: 0 0 2px 1px #555555;
+    }   
 
     #error {
       background-color: rgba(245, 0, 0, 0.685);
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 10vh;
-      font-size: 2em;
+      width:calc(100% - 15px);
+      min-height: 50px;
+      font-size: 1.5em;
+      margin:0px 10px;
     }
 
     .hidden {
       display: none;
+    }
+
+    #tests{
+      background-color: lightyellow;
+      color: #222222;
+      width:100%;
+      margin:0px;
+      padding: 20px;
+    }
+    .panel{
+      height: 100vh;
+      margin:0;
+      padding:20px;
+    }
+    a{
+      color:lightyellow;
+
     }

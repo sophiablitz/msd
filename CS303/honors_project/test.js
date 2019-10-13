@@ -183,7 +183,9 @@ describe("Egg", function () {
           value: 10
         }]
       });
+      document.getElementById(outputID).value = "";
     });
-  });
 
+    
+  });
 });
