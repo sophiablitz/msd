@@ -34,7 +34,16 @@
       width: calc(50vw - 20px);
       /*change with orientation*/
       height: 80vh;
-      margin: 5px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      font-size: 20pt;
+      border: none;
+      resize: none;
+      text-align: left;
+      padding: 5px;
     }
 
     #input {
@@ -49,15 +58,6 @@
       box-shadow: 0 0 1px #555555;
     }
 
-    textarea {
-      width: 100%;
-      height: 100%;
-      font-size: 20pt;
-      border: none;
-      resize: none;
-      text-align: left;
-      padding: 5px;
-    }
 
     #toolbar {
       padding-left: 5px;
@@ -93,6 +93,27 @@
       background-color: #222222;
       color: #eeeeee;
     }
+    #demo{
+      position: relative;
+      height:90vh;
+      background:none;
+      width:calc(100vw - 30px);
+      text-align: center;
+      margin-left:auto;
+      margin-right:auto;  
+    }
+    #error {
+      background-color: rgba(245, 0, 0, 0.685);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 10vh;
+      font-size: 2em;
+    }
+    .hidden{
+      display:none;
+    }
   </style>
 </head>
 
@@ -107,12 +128,17 @@
     <div id="toolbar" class="dark-theme-level-1">
       <button id="rotate" class="toolbarBtn dark-theme-level-2" onclick="onClickRotate()">Rotate</button>
       <button id="theme" class="toolbarBtn dark-theme-level-2" onclick="onClickChangeTheme()">Change Theme</button>
-      <button id="save" class="toolbarBtn dark-theme-level-2">Save</button>
-      <button id="run" class="toolbarBtn dark-theme-level-2">Run >></button>
+      <button id="run" class="toolbarBtn dark-theme-level-2" onclick="onClickRun()">Run >></button>
     </div>
-    <textarea id="input" class="section dark-theme-level-2"></textarea>
-
-    <textarea id="output" class="section" readonly></textarea>
+    <div id="demo">
+        <div id=" inputSection" class="section">
+          <textarea id="input" class=" dark-theme-level-2"></textarea>
+        </div>
+        <div id="outputSection" class="section">
+          <textarea id="output" class="section" readonly></textarea>
+        </div>
+        <div id="error" class="hidden"></div>
+    </div>
   </div>
   <!-- the element with id="mocha" will contain test results -->
   <div id="mocha"></div>

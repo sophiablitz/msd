@@ -1,4 +1,5 @@
 "use strict";
+/*global egg*/
 let sectionIsVertical = true;
 let themeIsDark = true;
 /** 
@@ -27,12 +28,12 @@ function onClickRotate() {
 function onClickChangeTheme() {
   let dark = ["dark-theme-level-1", "dark-theme-level-2"];
   let light = ["light-theme-level-1", "light-theme-level-2"];
-  let levels = [["tryItOut", "toolbar"], ["rotate", "theme", "save", "run", "input"]];
+  let levels = [["tryItOut", "toolbar"], ["rotate", "theme", "run", "input"]];
   let fromClasses = themeIsDark ? dark : light;
   let toClasses = themeIsDark ? light : dark;
 
-  changeClassForElementIds(levels[0], fromClasses[0], toClasses[0]);
-  changeClassForElementIds(levels[1], fromClasses[1], toClasses[1]);
+  changeClassForIds(levels[0], fromClasses[0], toClasses[0]);
+  changeClassForIds(levels[1], fromClasses[1], toClasses[1]);
 
   themeIsDark = !themeIsDark;
 
@@ -45,16 +46,29 @@ function onClickChangeTheme() {
  * @param {string} newClass css class name to be added
  * @returns {undefined}
  */
-function changeClassForElementIds(ids, oldClass, newClass) {
+function changeClassForIds(ids, oldClass, newClass) {
   for (let i = 0; i < ids.length; i++) {
     let el = document.getElementById(ids[i]);
     el.classList.remove(oldClass);
     el.classList.add(newClass);
   }
 }
-function onClickSave() {
-
-}
+/**
+ * Run the code in the onscreen input textarea through Egg. 
+ * Display errors in error div.
+ * @returns {undefined}
+ */
 function onClickRun() {
-
+  let errorDiv = document.getElementById("error");
+  errorDiv.classList.add("hidden");
+  document.getElementById("output").value = "";
+  let program = document.getElementById("input").value;
+  if (program.length > 0) {
+    try {
+      egg.run(program);
+    } catch (error) {
+      errorDiv.classList.remove("hidden");
+      errorDiv.innerHTML = "ERROR -- " + error.message;
+    }
+  }
 }
