@@ -12,7 +12,7 @@ function onClickRotate() {
   let sections = document.getElementsByClassName("section");
   for (let section of sections) {
     if (sectionIsVertical) {
-      section.style = "width: calc(100vw - 15px); height: 40vh;";
+      section.style = "width: calc(98vw - 20px); height: 40vh;";
     } else {
       section.style = "width: calc(50vw - 20px); height: 80vh;";
     }

@@ -6,7 +6,7 @@
 //        - DONE SkipSpace includes comments
 //        - TODO explain closures
 //        - DONE implement set
-// TODO: Write mocha tests in test.js
+// DONE: Write mocha tests in test.js
 // TODO: Complete jsdoc documentation (see namespace documentation in assignment)
 // TODO: Create jsdoc webpage
 // DONE: Create Try-it-now style input and output box in index.html
@@ -202,7 +202,7 @@ class Egg {
       } else if (endOfComment == trimmedString.length) {
         return "";
       } else {
-        return trimmedString.slice(endOfComment + 1);
+        return this.skipSpace(trimmedString.slice(endOfComment + 1));
       }
     } else {
       return trimmedString;
