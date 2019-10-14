@@ -2,6 +2,12 @@
 <html>
 
 <head>
+  <title>Egg!</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta name="description"
+    content="Egg, a javascript based programming language. Run your code and read the documentation.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- add mocha css, to show results -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
   <!-- add mocha framework code -->
@@ -17,25 +23,44 @@
     let assert = chai.assert;
   </script>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="tryItOut.css">
 </head>
 
-<body class="dark-theme-level-1 ">
-  <script src="index.js">    </script>
+<body class="dark-theme-level-1 " onload="onLoad()">
   <script src="egg.js">    </script>
   <script src="test.js">    </script>
+  <script src="tryItOut.js">    </script>
 
-  <div id="egg" class="panel dark-theme-level-1 ">
+  <script src="index.js">    </script>
+
+
+
+  <!-- Panel 2 - Documentation -->
+  <div id="documentation" class="panel eggshell-theme">
     <h1>Egg! A javascript based programming language.</h1>
-    <p>See <a href="https://eloquentjavascript.net/12_language.html">Eloquent Javascript</a> for instructions to
-      implement and starter code.</p>
-    <p>For more documentation, scroll down to <a href="#documentation">Documentation</a></p>
-    <div id="tryItOut" class="panel">
+    <p>Want to write your own implementation? See <a href="https://eloquentjavascript.net/12_language.html">Eloquent Javascript</a> for instructions and starter code.
+    </p>
 
+  </div>
+  <!-- Panel 1 - Egg intro and Try it out -->
+  <div id="egg" class="panel dark-theme-level-1 ">
+    <h1>Try it out</h1>
+
+    <div id="putItHere"></div>
+
+    <div id="putItHere2"></div>
+    <!-- Editor with buttons "TryItOut" -->
+    <div id="tryItOut" class="" style="display:none;">
+
+      <!-- Toolbar of buttons -->
       <div id="toolbar" class="dark-theme-level-1">
         <button id="rotate" class="toolbarBtn dark-theme-level-2" onclick="onClickRotate()">Rotate</button>
         <button id="theme" class="toolbarBtn dark-theme-level-2" onclick="onClickChangeTheme()">Change Theme</button>
         <button id="run" class="toolbarBtn dark-theme-level-2" onclick="onClickRun()">Run >></button>
+        <button id="clear" class="toolbarBtn dark-theme-level-2" onclick="onClickClear()">Clear</button>
       </div>
+
+      <!-- Code input and output area -->
       <div id="demo">
         <div id=" inputSection" class="section">
           <textarea id="input" class=" dark-theme-level-2"></textarea>
@@ -45,19 +70,23 @@
         </div>
         <div id="error" class="hidden"></div>
       </div>
-    </div>
-  </div>
-  <div id="documentation" class="panel light-theme-level-1">
-    <h1>Egg Documentation</h1>
-  </div>
-  <div id="tests" class="panel">
+
+    </div> <!-- Try it out -->
+  </div> <!-- End Panel with Try it out -->
+
+  <!-- Panel 3 - Mocha Tests -->
+  <div id="tests" class="panel eggshell-theme">
     <div>
       <h1>Mocha Chai Tests for egg</h1>
     </div>
+
     <!-- the element with id="mocha" will contain test results -->
     <div id="mocha"></div>
 
-  </div>
+    <!-- Output used for the Egg output used in mocha tests -- visibility: hidden; -->
+    <textarea id="testOutput"></textarea>
+
+  </div> <!-- End Panel 3 - Mocha Tests -->
 
 
   <!-- run tests! -->

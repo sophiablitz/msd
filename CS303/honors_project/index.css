@@ -2,11 +2,33 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
+    a.light-theme-level-1 { color:#222222; }
     .light-theme-level-1 { background-color: #dddddd; color: #222222; }
     .light-theme-level-2 { background-color: #eeeeee; color: #222222; }
+    a.dark-theme-level-1{ color:lightyellow; }
     .dark-theme-level-1 { background-color: #444444; color: #eeeeee; }
     .dark-theme-level-2 { background-color: #222222; color: #eeeeee; }
+
+    .eggshell-theme{ background-color: lightyellow; color: #222222;}
+    .eggshell-theme a{color:#444444 }
+    
+    #tests{
+      width:100%;
+      margin:0px;
+      padding: 20px;
+    }
+    .panel{
+      min-height: 100vh;
+      margin:0;
+      padding:20px;
+    }
+    
+    #testOutput{
+      visibility:hidden;
+      height:1px;
+      width:1px;
+    }
+
 
     #toolbar {
       padding-left: 5px;
@@ -22,17 +44,21 @@
     #run {
       background-color: #00bb77;
     }
-    #tryItOut {
-      height: 75vh;
+
+    #clear {
+      background-color: rgb(255, 88, 88);
+    }
+    #tryItOut{
+      background-color:red;
+    }
+    #atryItOut { /*remove a, or whole thing*/
+      height: calc(100vh - 50px);
       text-align: center;
-      /* resize: both; 
-      overflow: scroll;*/
-      border: 10px solid #444444;
+      /* border: 10px solid #444444; */
     }
 
     #demo {
       margin-top:5px;
-      background-color: green;
       position: relative;
       height: 90%;
       background: none;
@@ -58,7 +84,7 @@
       border: none;
       resize: none;
       text-align: left;
-      padding: 5px;
+      padding: 10px;
     }
     
     #input {
@@ -85,19 +111,5 @@
       display: none;
     }
 
-    #tests{
-      background-color: lightyellow;
-      color: #222222;
-      width:100%;
-      margin:0px;
-      padding: 20px;
-    }
-    .panel{
-      height: 100vh;
-      margin:0;
-      padding:20px;
-    }
-    a{
-      color:lightyellow;
-
-    }
+    
+    

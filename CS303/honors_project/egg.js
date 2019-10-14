@@ -8,7 +8,7 @@
 //        - DONE implement set
 // DONE: Write mocha tests in test.js
 // TODO: Complete jsdoc documentation (see namespace documentation in assignment)
-// TODO: Create jsdoc webpage
+// TODO: Create jsdoc webpage / tutorial
 // DONE: Create Try-it-now style input and output box in index.html
 // DONE: change print implementation to print to the screen
 

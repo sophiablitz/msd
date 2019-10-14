@@ -1,0 +1,72 @@
+    .TIO-toolbar {
+      padding-left: 5px;
+      text-align: left;
+    }
+    .TIO-toolbar-btn {
+      border: none;
+      width: auto;
+      height: 30px;
+    }
+    .TIO-run {
+      background-color: #00bb77;
+    }
+    .TIO-clear {
+      background-color: rgb(255, 88, 88);
+    }
+    .TIO {
+      text-align: center;
+      margin:20px 0px;
+      padding-bottom:10px;
+    }
+
+    .TIO-demo {
+      margin-top: 5px;
+      position: relative;
+      height: 90%;
+      background: none;
+      width: 100%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .TIO-section {
+      display: inline-block;
+      /*change with orientation*/
+      width: calc(50% - 10px);
+      /*change with orientation*/
+      height: calc(100% - 50px);
+    }
+
+    .TIO-textarea {
+      width: 100%;
+      height: 100%;
+      font-size: 20pt;
+      border: none;
+      resize: none;
+      text-align: left;
+      padding: 10px;
+    }
+    
+    .TIO-input {
+      /*change with theme*/
+      box-shadow: 0 0 2px 1px #444444;
+      font-family: monospace;
+    }
+
+    .TIO-output {
+      background-color: #eeeeee;
+      color: #222222;
+      box-shadow: 0 0 2px 1px #555555;
+    }   
+
+    .TIO-error {
+      background-color: rgba(245, 0, 0, 0.685);
+      width:calc(100% - 15px);
+      min-height: 50px;
+      font-size: 1.5em;
+      margin:0px 10px;
+    }
+
+    .TIO-hidden {
+      display: none;
+    }

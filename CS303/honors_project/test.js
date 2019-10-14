@@ -1,7 +1,8 @@
 "use strict";
 /* global Egg assert */
-let outputID = "output";
-let egg = new Egg(outputID);
+
+const testOutputID = "testOutput";
+let testEgg = new Egg(testOutputID);
 /***************
  * MOCHA TESTS *
  ***************/
@@ -9,9 +10,9 @@ let egg = new Egg(outputID);
 describe("Egg", function () {
   describe("Special Form: set", function () {
     it("Sets variable up the scope chain", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(`
+      testEgg.run(`
             do(define(x, 4),
               define(setx, fun(val, set(x, val))),
               setx(50),
@@ -24,7 +25,7 @@ describe("Egg", function () {
     it("Throws reference error when no binding is found", function () {
       let error = null;
       try {
-        egg.run("set(quux, true)");
+        testEgg.run("set(quux, true)");
       } catch (err) {
         error = err;
       }
@@ -33,9 +34,9 @@ describe("Egg", function () {
   });
   describe("Top Scope: Arrays", function () {
     it("Arrays can be used.", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` do(
+      testEgg.run(` do(
                   define(
                     myArray,
                     array(1,2,3)
@@ -56,104 +57,104 @@ describe("Egg", function () {
       assert.equal(outputElement.value, 6);
     });
     it("Arrays can be defined and accessed.", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(`
+      testEgg.run(`
               do(define(myArray,array(1,2,3)),print(myArray))`);
       assert.equal(outputElement.value, "1,2,3\n");
     });
     it("Array elements can be accessed and printed.", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(`
+      testEgg.run(`
               do(define(myArray,array(1,2,3)),print(element(myArray,1)))`);
       assert.equal(outputElement.value, "2\n");
     });
     it("Array length can be accessed and printed.", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(`
+      testEgg.run(`
               do(define(myArray,array(1,2,3)),print(length(myArray)))`);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, "3\n");
     });
 
   });
   describe("SkipSpace skips comments", function () {
     it("Comments can appear first in a program", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` #laksjdf
+      testEgg.run(` #laksjdf
                 do(
                   define(x,4),
                   print(x)
                 )`);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 4);
     });
     it("Comments can appear last in a program", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` do(
+      testEgg.run(` do(
                   define(x,4),
                   print(x)
                 )
                 #alskdjfasdlkfj`);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 4);
     });
     it("Comments can appear in the middle of a program", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` do(
+      testEgg.run(` do(
                   define(x,4),
                   #alskdjfasdlkfj
                   print(x)
                 )`);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 4);
     });
   });
   describe("Functions can be called, with Closures", function () {
     it("Functions can be created and called", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(`do(
+      testEgg.run(`do(
               define(plusOne, fun(a, +(a, 1))),
               print(plusOne(10)))
             `);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 11);
     });
     it("A function defined within a function accesses the variables defined externally", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` do(
+      testEgg.run(` do(
                   define(f, fun(a, fun(b, +(a, b)))),
                   print(f(4)(5)))
               `);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 9);
     });
   });
   describe("Define allows use of external scope within code blocks", function () {
     it("A variable defined outside of a while look is modified within a while loop.", function () {
-      let outputElement = document.getElementById(outputID);
+      let outputElement = document.getElementById(testOutputID);
       outputElement.value = "";
-      egg.run(` do(define(total, 0),
+      testEgg.run(` do(define(total, 0),
                   define(count, 1),
                   while(<(count, 11),
                         do(define(total, +(total, count)),
                             define(count, +(count, 1)))),
                   print(total))
                 `);
-      outputElement = document.getElementById(outputID);
+      outputElement = document.getElementById(testOutputID);
       assert.equal(outputElement.value, 55);
     });
   });
   describe("Parse", function () {
     it("Creates object for call with operator '+'", function () {
-      assert.deepEqual(egg.parse("+(a, 10)"), {
+      assert.deepEqual(testEgg.parse("+(a, 10)"), {
         type: "apply",
         operator: {
           type: "word",
@@ -169,7 +170,7 @@ describe("Egg", function () {
       });
     });
     it("Creates object for call with define", function () {
-      assert.deepEqual(egg.parse("define(a, 10)"), {
+      assert.deepEqual(testEgg.parse("define(a, 10)"), {
         type: "apply",
         operator: {
           type: "word",
@@ -183,7 +184,7 @@ describe("Egg", function () {
           value: 10
         }]
       });
-      document.getElementById(outputID).value = "";
+      document.getElementById(testOutputID).value = "";
     });
 
     
