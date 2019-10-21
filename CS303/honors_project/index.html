@@ -6,8 +6,8 @@
   <meta name="author" content="Sophia Blitz">
   <meta name="description"
     content="Egg, a javascript based programming language. Run your code and read the documentation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- add mocha css, to show results -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
   <!-- add mocha framework code -->
@@ -22,6 +22,8 @@
     // chai has a lot of stuff, let's make assert global
     let assert = chai.assert;
   </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="tryItOut.css">
 </head>
@@ -30,64 +32,679 @@
   <script src="egg.js">    </script>
   <script src="test.js">    </script>
   <script src="tryItOut.js">    </script>
-
   <script src="index.js">    </script>
 
 
 
-  <!-- Panel 2 - Documentation -->
-  <div id="documentation" class="panel eggshell-theme">
-    <h1>Egg! A javascript based programming language.</h1>
-    <p>Want to write your own implementation? See <a href="https://eloquentjavascript.net/12_language.html">Eloquent Javascript</a> for instructions and starter code.
-    </p>
+  <!-- Panel 1 - Tutorial -->
+  <div id="tutorial" class="panel eggshell-theme row">
+    <nav id="navbar" class="navbar-nav col-lg-2 col-md-3 col-sm-4">
+      <a href="#"><button class="nav-btn btn btn-active" onclick="showArticle(this,0)">
+          <h1>Egg</h1>
+        </button></a>
+      <button class="nav-btn btn" onclick="showArticle(this,1)">Egg Basics</button>
+      <button class="nav-btn btn " onclick="showArticle(this,2)">Egg Print</button>
+      <button class="nav-btn btn " onclick="showArticle(this,3)">Egg Define</button>
+      <button class="nav-btn btn" onclick="showArticle(this,4)">Egg Compare</button>
+      <button class="nav-btn btn" onclick="showArticle(this,5)">Egg Math</button>
+      <button class="nav-btn btn " onclick="showArticle(this,6)">Egg Do</button>
+      <button class="nav-btn btn " onclick="showArticle(this,7)">Egg If</button>
+      <button class="nav-btn btn " onclick="showArticle(this,8)">Egg While</button>
+      <button class="nav-btn btn " onclick="showArticle(this,9)">Egg Fun</button>
+      <button class="nav-btn btn " onclick="showArticle(this,10)">Egg Comments</button>
+      <button class="nav-btn btn " onclick="showArticle(this,11)">Egg Tests</button>
+      <button class="nav-btn btn " onclick="showArticle(this,12)">Egg Documentation</button>
+
+    </nav>
+    <div id="section" class="col-lg-10 col-md-9 col-sm-8">
+      <!-- ********** Egg Tutorial Article **********-->
+      <article id="intro" class="">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Tutorial</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Learn More</h2>
+        <p>Egg is a JavaScript based programming language. Want to write your own implementation? See <a id="eloquentLink" class="btn" target="_blank"
+            href="https://eloquentjavascript.net/12_language.html">Eloquent
+            Javascript</a> for instructions and starter code.
+        </p>
+
+        <!-- Code Example -->
+        <h2>Hello World</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="introExample" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">print("Hello World!")</textarea>
+          <button onclick="tio.placeCode(document.getElementById('introExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+      </article>
+
+      <!-- ********** Egg Basics Article **********-->
+      <article id="basics" class="article-hidden">
+
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Basics</h1>
+
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Expressions and Types</h2>
+        <p>Everything in Egg is an expression. An expression can be a number, a string, the name of a binding, or an
+          application. All expressions are one of three types: value, word, or apply.</p>
+        <h4>Value Type: Number</h4>
+        <p>A sequence of digits.</p>
+        <h4>Value Type: String</h4>
+        <p>A string is simply a sequence of characters that are not double quotes, wrapped in double quotes.</p>
+
+        <h4>Word Type: Binding</h4>
+        <p>Binding names can consist of any character that is not whitespace and that does not have a special meaning in
+          the syntax. Syntax characters include <code> ( ) , "</code></p>
+        <h4>Apply Type: Application</h4>
+        <p>Applications are written the way they are in JavaScript, by putting parentheses after an expression and
+          having any
+          number of arguments between those parentheses, separated by commas.</p>
+
+        <!-- Code Example -->
+        <h2>Working with Expressions</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="basicsExample" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">define(color,"blue")</textarea>
+          <button onclick="tio.placeCode(document.getElementById('basicsExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>define</code> is an application with two arguments <code>color</code> and <code>"blue"</code>.</p>
+        <p><code>color</code> is a name of a binding being defined.</p>
+        <p><code>"blue"</code> is a string value assigned to the binding <code>color</code>.</p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+      </article>
+
+      <!-- ********** Egg Print Article **********-->
+      <article id="print" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Print</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+        <h2>Print</h2>
+        <p>This implementation of Egg is configured to print to a designated HTML Textarea. Print is an application that
+          accepts one argument, an expression (number, string, binding, or application). </p>
+
+        <!-- Code Example -->
+        <h2>Print a String (Value)</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="printExample1" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">print("Hello World!")</textarea>
+          <button onclick="tio.placeCode(document.getElementById('printExample1').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+        <h4>Example Explained</h4>
+        <p><code>print</code> is an application with one argument, the string <code>"Hello World!"</code>.</p>
+
+        <!-- Code Example -->
+        <h2>Print a Number (Value)</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="printExample2" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">print(10)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('printExample2').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+        <h4>Example Explained</h4>
+        <p><code>print</code> is an application with one argument, the number <code>10</code>.</p>
+
+        <!-- Code Example -->
+        <h2>Print the result of an Application (Apply)</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="printExample3" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">print(define(color,"green"))</textarea>
+          <button onclick="tio.placeCode(document.getElementById('printExample3').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+        <h4>Example Explained</h4>
+        <p>
+          <code>print</code> is an application with one argument, the application
+          <code>define(color,"green")</code> which evaluates to the value assigned to the binding,
+          <code>"green"</code>.
+        </p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Define Article **********-->
+      <article id="define" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Define</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Define</h2>
+        <p><code>define()</code> is an application that accepts two arguments, separated by commas and returns the
+          second argument</p>
+        <h4>Arg 1: Binding</h4>
+        <p>The name of the binding, without quotes. Binding names can consist of any character that is not whitespace
+          and that does not have a special meaning in
+          the syntax.</p>
+        <h4>Arg 2: Value</h4>
+        <p>A string is simply a sequence of characters that are not double quotes, wrapped in double quotes.</p>
+        <h4>Returns: Arg 2</h4>
+        <p>Define returns the value that the second argument evaluates to.</p>
+
+
+        <!-- Code Example -->
+        <h2>Working with Expressions</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="defineExample" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">define(color,"blue")</textarea>
+          <button onclick="tio.placeCode(document.getElementById('defineExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>define</code> is an application with two arguments <code>color</code> and <code>"blue"</code>.</p>
+        <p><code>color</code> is a name of a binding being defined.</p>
+        <p><code>"blue"</code> is a string value assigned to the binding <code>color</code>.</p>
+        <p>Return value: <code>"blue"</code>.</p>
+
+
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Math Article **********-->
+      <article id="math" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Math.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Math Operations (Applications)</h2>
+        <p>Operations are of type Apply. Operations such as
+          <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code> are applications that
+          each accept two arguments, separated by commas. <code>-</code>, <code>*</code>, and <code>/</code> only accept
+          numeric arguments. However, <code>+</code>, like in JavaScript will add numeric values or if given a string as
+          an argument, will concatonate its arguments.
+        </p>
+        <h4>Arg 1: Expression</h4>
+        <p>A numeric expression (or a string with the <code>+</code> operator).</p>
+        <h4>Arg 2: Expression</h4>
+        <p>A numeric expression (or a string with the <code>+</code> operator).</p>
+        <h4>Returns: numeric</h4>
+        <p>Math operators (applications) return a calculated numeric value (or a string with the <code>+</code>
+          operator, when one or more arguments is a string).</p>
+
+
+        <!-- Code Example -->
+        <h2>What's the Difference</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example -</h3>
+          <textarea id="mathExample1" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">-(9,4)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('mathExample1').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>-(9,4)</code> calculates and returns the difference of its two arguments (9 - 4), which is 5.</p>
+
+        <!-- Code Example -->
+        <h2>Find a Sum</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example +</h3>
+          <textarea id="mathExample2" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">+(5,3)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('mathExample2').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>+(5,3)</code> calculates and returns the sum of its two arguments (5 + 3), which is 8.</p>
+
+        <!-- Code Example -->
+        <h2>Concatonate</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example + (with strings)</h3>
+          <textarea id="mathExample3" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">+("Hello ","world")</textarea>
+          <button onclick="tio.placeCode(document.getElementById('mathExample3').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>+("Hello ","world")</code> returns the concatonatation of its two arguments <code>"Hello "</code> and
+          <code>"world"</code>, or "Hello world".</p>
+
+
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Comparisons Article **********-->
+      <article id="comparisons" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Comparisons.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Comparison Operators (Applications)</h2>
+        <p>Comparisons are of type Apply. Comparisons such as
+          <code>></code>, <code><</code>, and <code>==</code> are applications that
+          each accept two arguments, separated by commas
+          and return <code>true</code> or <code>false</code>
+        </p>
+        <h4>Arg 1: Expression</h4>
+        <p>An expression of type Value, Word, or Apply that is compared based on evaluated value</p>
+        <h4>Arg 2: Expression</h4>
+        <p>An expression of type Value, Word, or Apply that is compared based on evaluated value</p>
+        <h4>Returns: true or false</h4>
+        <p>Comparison operators (applications) return <code>true</code> or <code>false</code>.</p>
+
+
+        <!-- Code Example -->
+        <h2>Greater Than</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example ></h3>
+          <textarea id="comaprisonsExample1" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">>(5,3)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('comaprisonsExample1').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>>(5,3)</code> determines if 5 is greater than 3 (like the 5>3) and returns true as 5 is greater than 3.
+        </p>
+
+        <!-- Code Example -->
+        <h2>Testing Equality</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example ==</h3>
+          <textarea id="comaprisonsExample2" disabled class="code-example-textarea light-theme-level-2"
+            rows="1">==(5,5)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('comaprisonsExample2').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>==(5,5)</code> determines if 5 is equal to 5 and returns true as 5 is equal to 5.</p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Do Article **********-->
+      <article id="do" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Do.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Do Block</h2>
+        <p><code>do()</code> is an application that accepts any number of arguments, separated by
+          commas. Each argument is an expression that will be evaluated in sequence and within the same scope.
+          <code>do()</code>
+          returns the value produced by its last argument.
+        </p>
+        <h4>Returns:</h4>
+        <p><code>do()</code> returns the value of its last expression.</p>
+
+        <!-- Code Example -->
+        <h2>Do Block</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="doExample" disabled class="code-example-textarea light-theme-level-2" rows="4">do(
+  define(sum,+(3,5)),
+  print(sum)
+)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('doExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>do</code> has two arguments, <code>define(sum,+(3,5))</code> and <code>print(sum)</code>. Each argument
+          is evaluated in sequence. First <code>define</code> creates the binding <code>sum</code> with the value 8.
+          Then, <code>print</code> displays the value of <code>sum</code>.</p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg If Article **********-->
+      <article id="if" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! If.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>If...then...else...</h2>
+        <p>
+          <code>if()</code> is a special form that accepts three arguments, separated by
+          commas. Different than an application, it only evaluates the second or third argument after evaluating the
+          first argument. It behaves similar to the JavaScript Ternary Operator. If the first argument evaluates
+          to not false, then the second argument is evaluated and returned. Otherwise, the third argument is evaluated
+          and returned.
+        </p>
+        <h4>Arg 1: Condition</h4>
+        <p>The first argument must evaluate to <code>true</code> or <code>false</code>.</p>
+        <h4>Arg 2: Expression</h4>
+        <p>The second argument is an expression that is evaluated if the first argument is not <code>false</code>.</p>
+        <h4>Arg 3: Expression</h4>
+        <p>The third argument is an expression that is evaluated if the first argument evaluates to <code>false</code>.
+        </p>
+        <h4>Returns:</h4>
+        <p><code>if()</code> returns the value of the argument executed (either the second argument or the third
+          argument).</p>
+
+
+        <!-- Code Example -->
+        <h2>If</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="ifExample" disabled class="code-example-textarea light-theme-level-2" rows="4">do(
+  define(age,19),
+  if(>(age,18),"Old enough to vote","Still a minor")
+)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('ifExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try
+            it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>if</code> has three arguments, <code>>(age,18)</code>, <code>"Old enough to vote"</code>, and
+          <code>"Still a minor"</code>. <code>age</code> is greater than 18, so the first argument evaluates to true. As
+          a result, the second argument is evaluated and returned. </p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg While Article **********-->
+      <article id="while" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! While.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>While</h2>
+        <p>
+          <code>while()</code> is a special form that accepts two arguments, separated by
+          commas. Different than an application, it only evaluates the second argument after evaluating the
+          first argument. If the first argument evaluates to not false, then the second argument is evaluated repeatedly
+          until the first argument evaluates to false. Each time the second argument is evaluated, it runs in a new
+          scope.
+        </p>
+
+        <h4>Arg 1: condition</h4>
+        <p>
+          The first argument must evaluate to <code>true</code> or <code>false</code> and is the condition for which
+          the while loop repeats.
+        </p>
+        <h4>Arg 2: Expression</h4>
+        <p>
+          The second argument is an expression that is evaluated if the first argument is not <code>false</code>. This
+          argument is evaluated again and again until the first argument is false. Multiple expressions can be
+          executed if wrapped in a <code>do()</code> statement.
+        </p>
+        <h4>Returns:</h4>
+        <p><code>while()</code> returns false.</p>
+
+        <!-- Code Example -->
+        <h2>Sum the numbers 1 to 10</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="whileExample" disabled class="code-example-textarea light-theme-level-2" rows="12">do(
+  define(sum,0),
+  define(x,1),
+  while(
+    <(x,11),
+    do(
+      define(sum,+(sum,x)),
+      define(x,+(x,1)),
+    )
+  ),
+  print(sum)
+)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('whileExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p>
+          <code>define</code> creates a variable <code>sum</code> and sets it equal to 0.<br>
+
+          <code>define</code> creates a variable <code>x</code> and sets it equal to 1.<br>
+
+          <code>while</code> has two arguments <code><(x,11)</code> and
+          <code>do(define(sum,+(sum,x)),define(x,+(x,1)),)</code>. <br>
+
+          The first argument evaluates to false as <code>x</code> is zero and less than 11. <br>
+          Therefore, the second argument is executed setting <code>sum</code> equal to iteself
+          plus <code>x</code>. Then <code>x</code> is incremented by one. This repeats until <code>x</code>
+          is no longer less than 11.<br>
+
+          The while loop terminates. <code>sum</code>, the sum of all integers from 1 to 10, is printed, 55.
+        </p>
+
+
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Fun Article **********-->
+      <article id="fun" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Fun.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Functions</h2>
+        <p>
+          <code>fun()</code> is a special form for defining functions. It accepts one or more arguments, separated by
+          commas. The last argument is the body of the function and is executed when the function is called. The first 0
+          to n-1 arguments are parameters for the function being defined. Different than an application,
+          <code>fun()</code>
+          only evaluates its last argument when the function it defines is called. At the time of a function call, a new
+          scope is created.
+        </p>
+
+        <h4>Args 1 through n-1: Function Parameters</h4>
+        <p>
+          The first arguments must be of type word.
+        </p>
+        <h4>Arg n: Function Body</h4>
+        <p>
+          The last argument is an expression that is evaluated when the function is called. All of the first arguments
+          appear in the local scope with values assigned based on the function call.
+        </p>
+        <h4>Returns:</h4>
+        <p><code>fun()</code> returns the result of evaluating the body, the last argument.</p>
+
+        <!-- Code Example -->
+        <h2>Fun plusOne</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="funExample" disabled class="code-example-textarea light-theme-level-2" rows="10">do(
+  define(
+    plusOne, 
+    fun(
+      num, 
+      +(num,1)
+    )
+  ),
+  print(plusOne(10))
+)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('funExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p>
+          <code>define</code> creates a variable <code>plusOne</code> and assigns to it a function created with
+          <code>fun()</code>.<br>
+
+          <code>fun(num,+(num,1))</code> has two arguments, a parameter <code>num</code> and the body of the function
+          <code>+(num,1)</code>. <br>
+
+          The function <code>plusOne()</code> is called with with the argument 10. The function runs, adding one to 10
+          and returns the result 11, which is printed.
+        </p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Comments Article **********-->
+      <article id="comments" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Comments.</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <h2>Comments</h2>
+        <p>Comments in Egg are in-line. <code>#</code> stats an in-line comment and the comment ends at the next
+          new-line.
+        </p>
+
+        <!-- Code Example -->
+        <h2>Comments</h2>
+        <div class="code-example-div light-theme-level-1">
+          <h3>Example</h3>
+          <textarea id="commentsExample" disabled class="code-example-textarea light-theme-level-2" rows="4">do(
+  define(sum,+(3,5)), #store 3 + 5
+  print(sum) #display result
+)</textarea>
+          <button onclick="tio.placeCode(document.getElementById('commentsExample').value);goToTryItOut();"
+            class="btn try-it-btn">Try
+            it out!</button>
+        </div>
+
+        <h4>Example Explained</h4>
+        <p><code>#store 3 + 5</code> and <code>#display result</code> are ignored as comments.</p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Tests Article **********-->
+      <article id="tests" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Mocha & Chai Tests</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+
+        <!-- the element with id="mocha" will contain test results -->
+        <div id="mocha"></div>
+
+        <!-- Output used for the Egg output used in mocha tests -- visibility: hidden; -->
+        <textarea id="testOutput"></textarea>
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+      <!-- ********** Egg Documentation Article **********-->
+      <article id="documentation" class="article-hidden">
+        <!-- Article Header -->
+        <div class="article-header">
+          <h1>Egg! Documentation</h1>
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+        <br>
+        <p>
+          Check out the <a id="documentationLink" target="_blank" href="./out/Egg.html" class="btn">documentation</a> for Egg.js.
+        </p>
+
+        <!-- Article Footer -->
+        <div class="article-footer">
+          <button id="previousBtn" class="btn previousBtn" onclick="changeArticle(-1)">Previous</button>
+          <button id="nextBtn" class="btn nextBtn" onclick="changeArticle(1)">Next</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <!-- Panel 2 -  Try it out Panel -->
+  <div id="tryItOutPanel" class="panel dark-theme-level-1 ">
+    <h1>Try it out!</h1>
+    <div id="editor"></div>
 
   </div>
-  <!-- Panel 1 - Egg intro and Try it out -->
-  <div id="egg" class="panel dark-theme-level-1 ">
-    <h1>Try it out</h1>
-
-    <div id="putItHere"></div>
-
-    <div id="putItHere2"></div>
-    <!-- Editor with buttons "TryItOut" -->
-    <div id="tryItOut" class="" style="display:none;">
-
-      <!-- Toolbar of buttons -->
-      <div id="toolbar" class="dark-theme-level-1">
-        <button id="rotate" class="toolbarBtn dark-theme-level-2" onclick="onClickRotate()">Rotate</button>
-        <button id="theme" class="toolbarBtn dark-theme-level-2" onclick="onClickChangeTheme()">Change Theme</button>
-        <button id="run" class="toolbarBtn dark-theme-level-2" onclick="onClickRun()">Run >></button>
-        <button id="clear" class="toolbarBtn dark-theme-level-2" onclick="onClickClear()">Clear</button>
-      </div>
-
-      <!-- Code input and output area -->
-      <div id="demo">
-        <div id=" inputSection" class="section">
-          <textarea id="input" class=" dark-theme-level-2"></textarea>
-        </div>
-        <div id="outputSection" class="section">
-          <textarea id="output" class="" readonly></textarea>
-        </div>
-        <div id="error" class="hidden"></div>
-      </div>
-
-    </div> <!-- Try it out -->
-  </div> <!-- End Panel with Try it out -->
-
-  <!-- Panel 3 - Mocha Tests -->
-  <div id="tests" class="panel eggshell-theme">
-    <div>
-      <h1>Mocha Chai Tests for egg</h1>
-    </div>
-
-    <!-- the element with id="mocha" will contain test results -->
-    <div id="mocha"></div>
-
-    <!-- Output used for the Egg output used in mocha tests -- visibility: hidden; -->
-    <textarea id="testOutput"></textarea>
-
-  </div> <!-- End Panel 3 - Mocha Tests -->
-
 
   <!-- run tests! -->
   <script>
