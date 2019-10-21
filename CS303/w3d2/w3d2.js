@@ -169,7 +169,7 @@ function runWhyTwoHamstersArefull() {
     stomach: [],
 
     eat(food) {
-      this.stomach = [food, ...this.stomach];
+      this.stomach = [food, ...this.stomach]; // this creates a new array obj for each inheriting hamster
     }
   };
 
@@ -188,15 +188,15 @@ function runWhyTwoHamstersArefull() {
   speedy.eat("apple");
   speedy.eat("orange");
   console.log("speedy.stomach:");
-  console.log(speedy.stomach); // apple
+  console.log(speedy.stomach); // apple, orange
 
   // This one also has it, why? fix please.
   console.log("lazy.stomach:");
-  console.log(lazy.stomach); // apple 
+  console.log(lazy.stomach); // was apple, but fixed so now empty
 
   // This one also has it, why? fix please.
   console.log("hamster.stomach:");
-  console.log(hamster.stomach); // apple 
+  console.log(hamster.stomach); // was apple, but fixed so now empty
 }
 
 /*****************************************************************

@@ -25,6 +25,9 @@ function runRabbit2() {
   let rabbit = new Rabbit();
   Rabbit.prototype = {};
   alert(rabbit.eats); // true
+  // with additional code below, any new Rabbit will NOT have eat in the prototype
+  let newRabbit = new Rabbit();
+  alert(newRabbit.eat);
 }
 
 function runRabbit3() {
