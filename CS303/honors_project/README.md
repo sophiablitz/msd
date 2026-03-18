@@ -1,1 +1,0 @@
-Egg: [https://sophiablitz.github.io/msd/CS303/honors_project/index.html/](https://sophiablitz.github.io/msd/CS303/honors_project/index.html/) 
