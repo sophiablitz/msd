@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Lesson 4 Extra Assignments</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+
+    function makeTable1() {
+
+      // Create message
+      let message = "";
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 0; j < i; j++) {
+          message += i;
+        }
+        message += "<br>";
+      }
+
+      // Display table
+      document.getElementById("output1").innerHTML = message;
+    }
+
+    function makeTable2() {
+
+      // Create message
+      let message = "";
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+          message += j;
+        }
+        message += "<br>";
+      }
+
+      // Display table
+      document.getElementById("output2").innerHTML = message;
+    }
+    function makeTable3() {
+
+      // Create message
+      let message = "";
+      for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+          message += i;
+        }
+        message += "<br>";
+      }
+
+      // Display table
+      document.getElementById("output3").innerHTML = message;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Lesson 4 Extra Assignments</h1>
+  <h2>Table 1</h2>
+  <button type="button" onclick="makeTable1();">Make Table</button><br>
+  <div id="output1"></div>
+
+  <h2>Table 2</h2>
+  <button type="button" onclick="makeTable2();">Make Table</button><br>
+  <div id="output2"></div>
+
+  <h2>Table 3</h2>
+  <button type="button" onclick="makeTable3();">Make Table</button><br>
+  <div id="output3"></div>
+
+</body>
+
+</html>

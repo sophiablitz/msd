@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 7</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function doFV() {
+      let principal = parseFloat(document.getElementById("input1").value);
+      let annualRate = parseFloat(document.getElementById("input2").value);
+      let years = parseInt(document.getElementById("input3").value);
+      let periodsPerYear = parseInt(document.getElementById("input4").value);
+      document.getElementById("output").innerHTML = "$" + computeFutureValue(principal, annualRate, years, periodsPerYear).toFixed(2) + ".";
+    }
+    function computeFutureValue(principal,annualRate,years,periodsPerYear) {
+      let n = years * periodsPerYear;
+      let r = annualRate / periodsPerYear;
+      return principal * Math.pow((1 + r),n);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 7 - Investment Calculator</h1>
+  Amount invested (principal): <input type="number" id="input1"> <br>
+  Annual rate (ex: 0.08): <input type="number" id="input2"> <br>
+  Number of years: <input type="number" id="input3"> <br>
+  Periods per year: <input type="number" id="input4"> <br>
+  <button type="button" onclick="doFV();">Compute future value</button><br>
+  Future Value: <div id="output"></div>
+
+
+</body>
+
+</html>

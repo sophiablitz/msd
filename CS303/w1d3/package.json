@@ -1,0 +1,14 @@
+{
+  "name": "w1d3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "w1d3_part1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sinon": "^7.5.0"
+  }
+}

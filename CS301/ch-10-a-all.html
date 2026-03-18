@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 10: All Assignment</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    // Assignment 1
+    function mothersDay() {
+      let mDay = [1905, 5, 10];
+      console.log("mothersDay() returns: " + mDay);
+      return mDay;
+    }
+
+    // Assignment 2
+    function addEnds(list) {
+      let sum;
+      if (list.length < 1) {
+        sum = 0;
+      } else if (list.length === 1) {
+        sum = list[0];
+      } else {
+        sum = list[0] + list[list.length - 1];
+      }
+      console.log("addEnds(list) returns: " + sum);
+      return sum;
+    }
+
+    // Assignment 3
+    function getMiddle(list) {
+      // Edge Case: If empty list, value is zero
+      if (list.length === 0) { return 0; }
+
+      // find middle value(s)
+      let value;
+      if (list.length % 2 === 0) { // Even list length requires average
+        let index1 = list.length / 2 - 1;
+        let index2 = list.length / 2
+        value = (list[index1] + list[index2]) / 2
+      } else { // Odd list length has single value
+        let index = Math.floor(list.length / 2)
+        value = list[index];
+      }
+      console.log("getMiddle() returns: " + value);
+      return value;
+    }
+
+    // Assignment 4
+    function countEvens(list) {
+      let count = 0;
+
+      for (let i in list) {
+        // if num in list is even, increase count
+        if (list[i] % 2 === 0) { count++; }
+      }
+
+      console.log("countEvens() returns: " + count);
+      return count;
+    }
+
+    // Assignment 5
+    function multiply(list, factor) {
+      // create resulting array by mapping a function that multiplies each element of list by the factor provided
+      let products = list.map(x => x * factor);
+
+      console.log("multiply() returns: " + products);
+      return products;
+    }
+
+
+    // Assignment 6
+    function rotateLeft(list) {
+      // Error handling
+      if (list.length === 0) { return; }
+
+      // Rotate elements to the left
+      let temp = list[0];
+      for (let i = 1; i < list.length; i++) {
+        // move ith element to element i-1
+        list[i - 1] = list[i];
+      }
+      // move first element from temp into last place in array
+      list[list.length - 1] = temp;
+
+      console.log("rotateLeft() returns: " + list);
+      return list;
+    }
+
+    // Assignment 7
+    function rotateRight(list) {
+      // Error handling
+      if (list.length === 0) { return; }
+
+      // Rotate elements to the right
+      let temp = list[list.length - 1];
+      for (let i = list.length - 1; i >= 1; i--) {
+        // move ith element to element i-1
+        list[i] = list[i - 1];
+      }
+      // move last element from temp into first place in array
+      list[0] = temp;
+
+      console.log("rotateRight() returns: " + list);
+      return list;
+    }
+
+    // Assignment 10
+    function twelveDays(day) {
+      let index = day - 1;
+      let numbers = [" first", " second", " third", " fourth", " fifth", " sixth", " seventh", " eighth", " nineth", " tenth", " eleventh", " twelfth"];
+      let gifts = [
+        " a partridge in a pear tree.",
+        " two turtle doves",
+        " three French hens",
+        " four calling birds",
+        " five golden rings",
+        " six geese a laying",
+        " seven swans a swimming",
+        " eight maids a milking",
+        " nine ladies dancing",
+        " ten lords a leaping",
+        " eleven pipers piping",
+        " twelve drummers drumming"
+      ];
+      // start song lyrics
+      let lyrics = "On the" + numbers[index] + " day of Christmas, my true love gave to me: ";
+
+      for (let i = index; i>0; i--){
+        lyrics += gifts[i] + ",";
+      }
+      // If not the first day, add 'and' 
+      if (index != 0) { lyrics += " and";}
+      lyrics += gifts[0];
+
+
+      console.log(lyrics);
+      alert(lyrics);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 10: All Assignments</h1>
+  All returned values are also printed to the console.
+  <table>
+    <tr>
+      <td>Assignment 1 - mothersDay()</td>
+      <td><button type="button" onclick="mothersDay();">mothersDay()</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 2 - addEnds()</td>
+      <td><button type="button" onclick="addEnds([1905,5,10]);">addEnds( [1905, 5, 10] )</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 3 - getMiddle() with odd array length</td>
+      <td><button type="button" onclick="getMiddle([1905,5,10]);">getMiddle( [1905, 5, 10] )</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 3 - getMiddle() with even array length</td>
+      <td><button type="button" onclick="getMiddle([1905,5,10,3]);">getMiddle( [1905, 5, 10, 3] )</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 4 - countEvens() </td>
+      <td><button type="button" onclick="countEvens([1905,5,10,3]);">countEvens( [1905, 5, 10, 3] )</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 5 - multiply() </td>
+      <td><button type="button" onclick="multiply([1905,5,10,3], 3);">multiply( [1905, 5, 10, 3], 3 )</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 6 - rotateLeft() </td>
+      <td><button type="button" onclick="rotateLeft([1905,5,10,3]);">rotateLeft( [1905, 5, 10, 3])</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 7 - rotateRight() </td>
+      <td><button type="button" onclick="rotateRight([1905,5,10,3]);">rotateRight( [1905, 5, 10, 3])</button></td>
+    </tr>
+    <tr>
+      <td>Assignment 10 - Twelve days of Chrismas() </td>
+      <td><button type="button"
+          onclick="twelveDays(prompt('Enter an integer 1 through 12 for that verse of the song 12 Days of Christmas'));">twelveDays()</button>
+      </td>
+    </tr>
+  </table>
+
+
+</body>
+
+</html>

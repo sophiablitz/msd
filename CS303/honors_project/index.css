@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a.light-theme-level-1 { color:#222222; }
+.light-theme-level-1 { background-color: #dddddd; color: #222222; }
+.light-theme-level-2 { background-color: #eeeeee; color: #222222; }
+a.dark-theme-level-1{ color:lightyellow; }
+.dark-theme-level-1 { background-color: #444444; color: #eeeeee; }
+.dark-theme-level-2 { background-color: #222222; color: #eeeeee; }
+
+.eggshell-theme{ background-color: lightyellow; color: #222222;}
+.eggshell-theme a { text-decoration: #444444 ; color:#444444;  }
+.eggshell-theme #navbar { background-color:#eeeeee; color:#222222;}
+.eggshell-theme button:active{ background-color:lightyellow; color:#222222;}
+.eggshell-theme .btn-active{ background-color:#B6E48D; color:#222222;}
+.eggshell-theme .nextBtn, .eggshell-theme .previousBtn { background-color: #B6E48D; color:#222222;}
+.eggshell-theme .nextBtn:hover, .eggshell-theme .previousBtn:hover { border:1px solid #B6E48D; background-color: #ffffff;}
+.eggshell-theme .try-it-btn { background-color:#444444; color:#eeeeee;} 
+
+/* #tests{
+  width:100%;
+  margin:0px;
+  padding: 20px;
+} */
+.panel{
+  min-height: 100vh;
+  margin:0;
+}
+
+#testOutput{
+  visibility:hidden;
+  height:1px;
+  width:1px;
+}
+#navbar button{
+  width: 100%;
+  text-align: left;
+  border-radius: 0px;
+  margin: 2px 0px;
+}
+#navbar{
+  padding:10px 0px;
+}
+
+#section{
+  padding:20px;
+}
+
+article{
+  width:100%;
+  padding:0px;
+  margin:0px;
+}
+.article-hidden{
+  display:none;
+}
+article h1 {
+  padding-bottom: 20px;
+}
+.article-header{
+  width:100%;
+  padding-bottom:50px;
+  position: relative;
+  border-bottom: 5px dotted #B6E48D;
+}
+.article-footer{
+  width:100%;
+  margin-top:20px;
+  padding-bottom:50px;
+  position: relative;
+}
+.previousBtn {
+  left: 0px;
+  position:absolute;
+}
+.nextBtn{
+  right: 0px;
+  position:absolute;
+}
+.code-example-div{
+  display:block;
+  width: 100%;
+  padding:20px;
+  margin-bottom:15px;
+}
+.code-example-textarea{
+  display:block;
+  width: 100%;
+  height:auto;
+  padding:20px 20px 20px 20px;
+  border-left: 3px solid #B6E48D;
+  margin: 20px 0px;
+  font-family: monospace;
+  font-size: 1.5em;
+}
+
+h2 {margin-top:25px;}
+code {
+  background-color:#dddddd;
+  padding:2px;
+}
+#documentationLink{
+  background-color: white;
+  border: 1px solid turquoise;
+  font-family: 'Courier New', Courier, monospace;
+}
+#documentationLink:hover{
+  background-color: turquoise;
+}
+#eloquentLink{
+  background-color: white;
+  border: 1px solid #B6E48D;
+  font-family: 'Cinzel', Georgia, serif;
+}#eloquentLink:hover{
+  background-color: #B6E48D;
+}

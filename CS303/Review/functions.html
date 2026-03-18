@@ -1,0 +1,22 @@
+<script>
+  "use strict";
+  function myFunc() {
+    console.log('hi');
+  }
+  function iNeedAFunction(func) {
+    console.log("****************************");
+    console.log("You gave me a function: ");
+    console.log(func);
+    console.log("Now I will call it: ");
+    console.log(func());
+  }
+
+  iNeedAFunction(function () {
+    console.log('hi');
+  });
+  iNeedAFunction( () => { 
+    console.log('hi');
+  });
+  iNeedAFunction(myFunc);
+  iNeedAFunction(myFunc());
+</script>

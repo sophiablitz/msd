@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 2</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function doInputOutput() {
+      let input = parseFloat(document.getElementById("input").value);
+      document.getElementById("output").innerHTML = farhToCels(input) + " C.";
+    }
+    function farhToCels(f){
+      return (f - 32) * 5 / 9 ;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 2 - Temperature Converter</h1>
+  Fahrenheit: <input type="text" id="input">  <button type="button" onclick="doInputOutput();">Celsius</button><br>
+  <div id="output"></div>
+
+
+</body>
+
+</html>

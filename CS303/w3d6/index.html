@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+  <style>
+    .part {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="w3d6_part_1.js">    </script>
+  <script src="w3d6_part_2.js">    </script>
+  <script src="w3d6_part_3.js">    </script>
+  <!-- <script src="w3d6_test.js">    </script> -->
+
+  <h1>Homework w3d6</h1>
+  <h3>Sophia Blitz</h3>
+
+  <div id="part1" class="part">
+    <h1>Part 1</h1>
+
+    <p>Click the buttons to run each exercise.</p>
+
+    <h2>Chapter: Error Handling</h2>
+    <h3>Section: Error Handling, "try...catch"</h3>
+
+    <h5>Task 1: Finally or just the code?</h5>
+    <p>Compare the two code fragments.
+
+      The first one uses finally to execute the code after try..catch:<br>
+      <p>
+        <code>
+          try {work work} <br>
+          catch (e) {handle errors} <br>
+          finally {cleanup the working space}<br>
+        </code>
+      </p>
+
+      The second fragment puts the cleaning right after try..catch:<br>
+      <p>
+        <code>
+        try {work work} <br>
+        catch (e) {handle errors}<br>
+        cleanup the working space<br>
+        </code>
+      </p>
+
+      <p> We definitely need the cleanup after the work, doesn’t matter if there was an error or not.</p>
+
+      <em>Is there an advantage here in using finally or both code fragments are equal?</em><br>
+      <p>
+        The difference between using <code>finally</code> versus code after the <code>try...catch</code> is a
+        <code>try...catch...finally</code> will execute
+        the code in the <code>finally</code> block even if the <code>try...catch</code> blocks have return statements.
+        Finally executes before
+        returning from <code>try</code> or <code>catch</code>.
+      </p>
+      <em>If there is such an advantage, then give an example when it matters.</em><br>
+      <p>
+        In the event that cleanup must be done before returning from a function within the <code>try...catch</code>,
+        <code>finally</code> is
+        the place to clean up.
+      </p>
+
+    </p>
+    <h3>Custom errors, extending Errors</h3>
+    <h5>Task 1: Inherit from SyntaxError</h5>
+    <ul>
+      <li><button onclick="runInheritFromSyntaxError();">Run Inherit From SyntaxError</button> (alert)</li>
+    </ul>
+
+  </div>
+  <div id="part2" class="part">
+    <h1>Part 2</h1>
+    <h2>Calculate Age</h2>
+    Year: <input type="text" id="year"><br>
+    Month: <input type="text" id="month"><br>
+    Day: <input type="text" id="day"><br>
+    <button onclick="calculateAge();">Calculate Age</button>
+    <div id="ageOutput"></div>
+  </div>
+  <div id="part3" class="part">
+    <h1>Part 3</h1>
+    <p>Initial array: [1,-22,3000]. See output below.</p>
+    <h2>Array Functions With Map</h2>
+    <ul>
+      <li><button onclick="output(squareAnArrayWithMap(initialArray));">Square an array</button></li>
+      <li><button onclick="output(multiplyAnArrayBy1000WithMap(initialArray));">Multiply an array by 1000</button></li>
+      <li><button onclick="output(makeAnArrayNegativeWithMap(initialArray));">Make an array negative</button></li>
+      <li><button onclick="output(divideArrayBy10WithMap(initialArray));">Divide an array by 10</button></li>
+    </ul>
+    <h2>Array Functions Without Map</h2>
+    <ul>
+      <li><button onclick="output(squareAnArray(initialArray));">Square an array</button></li>
+      <li><button onclick="output(multiplyAnArrayBy1000(initialArray));">Multiply an array by 1000</button></li>
+      <li><button onclick="output(makeAnArrayNegative(initialArray));">Make an array negative</button></li>
+      <li><button onclick="output(divideArrayBy10(initialArray));">Divide an array by 10</button></li>
+    </ul>
+    <h3>Output</h3>
+    <div id="arrayOutput"></div>
+  </div>
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

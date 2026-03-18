@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chapter 4: Assignment 2</title>
+    <meta name="author" content="Sophia Blitz">
+    <meta charset="utf-8">
+    <script>
+      /* Defining Table
+       * Input: A perosn's name
+       * Processing: Create a verse of scripture for that person
+       *    by selecting two keywords from two small wordbanks
+       *    determined by the length of the user's name.
+       * Output: The scripture
+       */
+      function applyScripture() {
+        // Get the user's name from the text field that has the id
+        // of "nameInputBox" and store it in a variable named name.
+        let name = document.getElementById('nameInputBox').value;
+
+        let adjectives = ['godly', 'troubled', 'alien'];
+        let person = ['mother', 'sister', 'teacher'];
+
+        // Use string concatenation to create a verse
+        // of scripture personalized for the user.
+        let scripture = "I, " + name + ", having been born of <em>" + 
+        adjectives[name.length%3] + "</em> parents, therefore I was taught somewhat" +
+        " in all the learning of my <em>" + person[name.length%3] + "</em>.";
+
+        // Display the scripture in the div that has the id "outputDiv".
+        document.getElementById('outputDiv').innerHTML = scripture;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Chapter 4: Assignment 2 - Scripture</h1>
+    Please enter your name: <input type="text" id="nameInputBox">
+    <button type="button" onclick="applyScripture()">Verse</button>
+    <br>
+    <p>
+        Change your name to change your verse.
+    </p>
+    <div id="outputDiv"></div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 9: Assignment 3</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function doInputOutput() {
+      let speed = parseFloat(document.getElementById("input1").value);
+      let temp = parseFloat(document.getElementById("input2").value);
+      document.getElementById("output").innerHTML = windChill(temp,speed) + ".";
+    }
+    function windChill(t, s){
+      return 35.74 + 0.6215 * t - 35.75 * Math.pow(s,0.16) + 0.4275 * t * Math.pow(s,0.16);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 9: Assignment 3 - Wind Chill Calculator</h1>
+  Wind speed (mph): <input type="number" id="input1"> <br>
+  Temperature (F): <input type="number" id="input2"> <br>
+  <button type="button" onclick="doInputOutput();">Wind Chill</button><br>
+  Wind Chill Factor: <div id="output"></div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Chapter 10: Assignment 11</title>
+  <meta name="author" content="Sophia Blitz">
+  <meta charset="utf-8">
+  <script>
+    function sort() {
+      // get input from textbox 'input'
+      let text = document.getElementById("input").value;
+      // console.log(text); // DEBUG
+
+      // separate text string into an array of numbers
+      let inArray = text.split("\n");
+
+      // console.log(inArray); // DEBUG
+
+      // sort array of numbers by comparison of numeric value
+      inArray.sort(function (a, b) { return a - b; });
+      // console.log(inArray); // DEBUG
+
+      // output the joined array of values with new lines between each value
+      document.getElementById("output").value = inArray.join("\n");;
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Chapter 10: Assignment 11</h1>
+  <table>
+    <tr>
+      <td><textarea id="input" style="height:200px; width:100px;"></textarea></td>
+      <td><button type="button" onclick="sort();">Sort</button></td>
+      <td><textarea id="output" style="height:200px; width:100px;"></textarea></td>
+    </tr>
+  </table>
+</body>
+
+</html>
